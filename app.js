@@ -1,8 +1,8 @@
 const NUMBER_TEAMS = 36;
 const NUMBER_POTS = 4;
-const NUMBER_FIXTURES = 8;
-const TEAMS_PER_POT = NUMBER_TEAMS / NUMBER_POTS;
-const FIXTURES_PER_POT = NUMBER_FIXTURES / NUMBER_POTS;
+const NUMBER_WEEKS = 8;
+const FIXTURES_PER_POT = NUMBER_WEEKS / NUMBER_POTS;
+const FIXTURES_PER_WEEK = NUMBER_TEAMS / 2;
 const LOCATIONS = ["Home", "Away"];
 
 const DEBUG = false;
@@ -28,10 +28,6 @@ class Team {
     this.coefficient = coefficient;
     this.pot = pot;
     this.fixtures = [];
-  }
-
-  addFixture(fixture) {
-    this.fixtures.push(fixture);
   }
 
   isDrawableTo(other) {
@@ -81,13 +77,12 @@ class League {
   teams;
   pots;
   fixtures;
-  matchweeks;
 
   constructor() {
     this.loadTeams();
     this.generatePots();
     this.generateFixtures();
-    //this.scheduleFixtures();
+    this.scheduleFixtures();
   }
 
   loadTeams() {
@@ -115,20 +110,16 @@ class League {
       );
   }
 
-  addFixture(fixture) {
-    this.fixtures.push(fixture);
-  }
-
   attemptGenerateFixtures() {
     this.fixtures = [];
     // For each pot i
     for (let i = 0; i < NUMBER_POTS; i++) {
-      DEBUG && console.log("Drawing pot =", i + 1);
+      DEBUG && console.log("generateFixtures(): drawing pot =", i + 1);
       // While there are teams in pot i
       while (this.pots[i].length > 0) {
         // Get a drawing team from pot i
         let t1 = getRandom(this.pots[i]);
-        DEBUG && console.log("Drawing team =", t1.name);
+        DEBUG && console.log("generateFixtures(): drawing team =", t1.name);
         // For each pot j after and including pot i
         for (let j = i; j < NUMBER_POTS; j++) {
           // Draw teams until number of fixtures of pot j is two
@@ -140,26 +131,32 @@ class League {
             }
             DEBUG &&
               console.log(
-                "Options to draw =",
+                "generateFixtures(): drawable teams =",
                 drawableTeams.map((t) => t.name)
               );
             let t2 = getRandom(drawableTeams);
             let loc = t1.getLocationForFixture(t2);
-            t1.addFixture({
+            t1.fixtures.push({
               team: t2.name,
               pot: t2.pot,
               location: loc,
             });
-            t2.addFixture({
+            t2.fixtures.push({
               team: t1.name,
               pot: t1.pot,
               location: LOCATIONS.filter((l) => l !== loc)[0],
             });
-            this.addFixture({
+            this.fixtures.push({
               home: loc === LOCATIONS[0] ? t1.name : t2.name,
               away: loc === LOCATIONS[0] ? t2.name : t1.name,
             });
-            DEBUG && console.log("Drawn team =", t2.name, t2.pot, loc);
+            DEBUG &&
+              console.log(
+                "generateFixtures(): drawn team =",
+                t2.name,
+                t2.pot,
+                loc
+              );
           }
         }
         // Remove drawing team from pot i
@@ -178,9 +175,70 @@ class League {
       this.generatePots();
       tries++;
     }
-    // It takes on average 35 tries for it to generate fixtures successfully
+    // It is taking on average 55 tries (from 15 attempts)
     DEBUG && console.log("generateFixtures(): number of tries =", tries);
     DEBUG && console.log("generateFixtures(): fixtures =", this.fixtures);
+  }
+
+  attemptScheduleFixtures() {
+    let tries = 1;
+    let weeks = Array.from({ length: NUMBER_WEEKS }, () => []);
+    let fixtures_ = JSON.parse(JSON.stringify(this.fixtures));
+    let week = 0;
+    // For each matchweek
+    while (week < NUMBER_WEEKS) {
+      DEBUG && console.log("scheduleFixtures(): week =", week + 1);
+      let weekTries = 0;
+      let playingTeams = new Set();
+      let match = 0;
+      // For 18 fixtures
+      while (match < FIXTURES_PER_WEEK) {
+        // Choose a random fixture whose teams are not already playing in the current week
+        let availableFixtures = fixtures_.filter(
+          (f) => !playingTeams.has(f.home) && !playingTeams.has(f.away)
+        );
+        // If no available fixtures, reset the current matchweek and try again
+        if (availableFixtures.length === 0) {
+          if (weekTries > 1000) {
+            weeks = Array.from({ length: NUMBER_WEEKS }, () => []);
+            fixtures_ = JSON.parse(JSON.stringify(this.fixtures));
+            week = 0;
+            DEBUG &&
+              console.log("scheduleFixtures(): resetting week =", week + 1);
+          }
+          weeks[week] = [];
+          playingTeams.clear();
+          match = 0;
+          weekTries++;
+          tries++;
+          continue;
+        }
+        DEBUG &&
+          console.log(
+            "scheduleFixtures(): available fixtures =",
+            availableFixtures
+          );
+        let fixture = getRandom(availableFixtures);
+        DEBUG && console.log("scheduleFixtures(): chosen fixture =", fixture);
+        weeks[week].push(fixture);
+        playingTeams.add(fixture.home);
+        playingTeams.add(fixture.away);
+        match++;
+      }
+      // Remove extra fixtures from the copy
+      fixtures_ = fixtures_.filter((f) => !weeks[week].includes(f));
+      week++;
+    }
+    // Fixtures generated successfully
+    this.fixtures = weeks;
+    return tries;
+  }
+
+  scheduleFixtures() {
+    let tries = this.attemptScheduleFixtures();
+    // It is taking on average 2042 tries (from 15 attempts)
+    true && console.log("scheduleFixtures(): number of tries =", tries);
+    DEBUG && console.log("scheduleFixtures(): fixtures =", this.fixtures);
   }
 }
 
