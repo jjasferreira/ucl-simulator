@@ -1,218 +1,218 @@
 [
-	{
-		"name": "Manchester City",
-		"country": "England",
-		"coefficient": 148000,
-		"pot": 1
-	},
-	{
-		"name": "Bayern Munich",
-		"country": "Germany",
-		"coefficient": 144000,
-		"pot": 1
-	},
-	{
-		"name": "Real Madrid",
-		"country": "Spain",
-		"coefficient": 136000,
-		"pot": 1
-	},
-	{
-		"name": "Paris Saint-Germain",
-		"country": "France",
-		"coefficient": 116000,
-		"pot": 1
-	},
-	{
-		"name": "Liverpool",
-		"country": "England",
-		"coefficient": 114000,
-		"pot": 1
-	},
-	{
-		"name": "Inter Milan",
-		"country": "Italy",
-		"coefficient": 101000,
-		"pot": 1
-	},
-	{
-		"name": "Borussia Dortmund",
-		"country": "Germany",
-		"coefficient": 97000,
-		"pot": 1
-	},
-	{
-		"name": "RB Leipzig",
-		"country": "Germany",
-		"coefficient": 97000,
-		"pot": 1
-	},
-	{
-		"name": "Barcelona",
-		"country": "Spain",
-		"coefficient": 91000,
-		"pot": 1
-	},
-	{
-		"name": "Bayer Leverkusen",
-		"country": "Germany",
-		"coefficient": 90000,
-		"pot": 2
-	},
-	{
-		"name": "Atlético Madrid",
-		"country": "Spain",
-		"coefficient": 89000,
-		"pot": 2
-	},
-	{
-		"name": "Atalanta BC",
-		"country": "Italy",
-		"coefficient": 81000,
-		"pot": 2
-	},
-	{
-		"name": "Juventus",
-		"country": "Italy",
-		"coefficient": 80000,
-		"pot": 2
-	},
-	{
-		"name": "SL Benfica",
-		"country": "Portugal",
-		"coefficient": 79000,
-		"pot": 2
-	},
-	{
-		"name": "Arsenal",
-		"country": "England",
-		"coefficient": 72000,
-		"pot": 2
-	},
-	{
-		"name": "Club Brugge",
-		"country": "Belgium",
-		"coefficient": 64000,
-		"pot": 2
-	},
-	{
-		"name": "Rangers",
-		"country": "Scotland",
-		"coefficient": 63000,
-		"pot": 2
-	},
-	{
-		"name": "Shakhtar Donetsk",
-		"country": "Ukraine",
-		"coefficient": 63000,
-		"pot": 2
-	},
-	{
-		"name": "AC Milan",
-		"country": "Italy",
-		"coefficient": 59000,
-		"pot": 3
-	},
-	{
-		"name": "Feyenoord",
-		"country": "Netherlands",
-		"coefficient": 57000,
-		"pot": 3
-	},
-	{
-		"name": "Sporting CP",
-		"country": "Portugal",
-		"coefficient": 54500,
-		"pot": 3
-	},
-	{
-		"name": "PSV Eindhoven",
-		"country": "Netherlands",
-		"coefficient": 54000,
-		"pot": 3
-	},
-	{
-		"name": "Slavia Prague",
-		"country": "Czech Republic",
-		"coefficient": 53000,
-		"pot": 3
-	},
-	{
-		"name": "Dinamo Zagreb",
-		"country": "Croatia",
-		"coefficient": 50000,
-		"pot": 3
-	},
-	{
-		"name": "Red Star Belgrade",
-		"country": "Serbia",
-		"coefficient": 40000,
-		"pot": 3
-	},
-	{
-		"name": "PAOK",
-		"country": "Greece",
-		"coefficient": 37000,
-		"pot": 3
-	},
-	{
-		"name": "Maccabi Tel Aviv",
-		"country": "Israel",
-		"coefficient": 35500,
-		"pot": 3
-	},
-	{
-		"name": "Ferencváros",
-		"country": "Hungary",
-		"coefficient": 35000,
-		"pot": 4
-	},
-	{
-		"name": "Celtic",
-		"country": "Scotland",
-		"coefficient": 32000,
-		"pot": 4
-	},
-	{
-		"name": "AS Monaco",
-		"country": "France",
-		"coefficient": 24000,
-		"pot": 4
-	},
-	{
-		"name": "Aston Villa",
-		"country": "England",
-		"coefficient": 20860,
-		"pot": 4
-	},
-	{
-		"name": "Bologna",
-		"country": "Italy",
-		"coefficient": 18056,
-		"pot": 4
-	},
-	{
-		"name": "Girona",
-		"country": "Spain",
-		"coefficient": 17897,
-		"pot": 4
-	},
-	{
-		"name": "VfB Stuttgart",
-		"country": "Germany",
-		"coefficient": 17324,
-		"pot": 4
-	},
-	{
-		"name": "Sturm Graz",
-		"country": "Austria",
-		"coefficient": 14500,
-		"pot": 4
-	},
-	{
-		"name": "Stade Brestois",
-		"country": "France",
-		"coefficient": 13366,
-		"pot": 4
-	}
+  {
+    "name": "Manchester City",
+    "country": "England",
+    "coefficient": 148000,
+    "pot": 1
+  },
+  {
+    "name": "Bayern Munich",
+    "country": "Germany",
+    "coefficient": 144000,
+    "pot": 1
+  },
+  {
+    "name": "Real Madrid",
+    "country": "Spain",
+    "coefficient": 136000,
+    "pot": 1
+  },
+  {
+    "name": "Paris Saint-Germain",
+    "country": "France",
+    "coefficient": 116000,
+    "pot": 1
+  },
+  {
+    "name": "Liverpool",
+    "country": "England",
+    "coefficient": 114000,
+    "pot": 1
+  },
+  {
+    "name": "Inter Milan",
+    "country": "Italy",
+    "coefficient": 101000,
+    "pot": 1
+  },
+  {
+    "name": "Borussia Dortmund",
+    "country": "Germany",
+    "coefficient": 97000,
+    "pot": 1
+  },
+  {
+    "name": "RB Leipzig",
+    "country": "Germany",
+    "coefficient": 97000,
+    "pot": 1
+  },
+  {
+    "name": "Barcelona",
+    "country": "Spain",
+    "coefficient": 91000,
+    "pot": 1
+  },
+  {
+    "name": "Bayer Leverkusen",
+    "country": "Germany",
+    "coefficient": 90000,
+    "pot": 2
+  },
+  {
+    "name": "Atletico Madrid",
+    "country": "Spain",
+    "coefficient": 89000,
+    "pot": 2
+  },
+  {
+    "name": "Atalanta BC",
+    "country": "Italy",
+    "coefficient": 81000,
+    "pot": 2
+  },
+  {
+    "name": "Juventus",
+    "country": "Italy",
+    "coefficient": 80000,
+    "pot": 2
+  },
+  {
+    "name": "SL Benfica",
+    "country": "Portugal",
+    "coefficient": 79000,
+    "pot": 2
+  },
+  {
+    "name": "Arsenal",
+    "country": "England",
+    "coefficient": 72000,
+    "pot": 2
+  },
+  {
+    "name": "Club Brugge",
+    "country": "Belgium",
+    "coefficient": 64000,
+    "pot": 2
+  },
+  {
+    "name": "Rangers",
+    "country": "Scotland",
+    "coefficient": 63000,
+    "pot": 2
+  },
+  {
+    "name": "Shakhtar Donetsk",
+    "country": "Ukraine",
+    "coefficient": 63000,
+    "pot": 2
+  },
+  {
+    "name": "AC Milan",
+    "country": "Italy",
+    "coefficient": 59000,
+    "pot": 3
+  },
+  {
+    "name": "Feyenoord",
+    "country": "Netherlands",
+    "coefficient": 57000,
+    "pot": 3
+  },
+  {
+    "name": "Sporting CP",
+    "country": "Portugal",
+    "coefficient": 54500,
+    "pot": 3
+  },
+  {
+    "name": "PSV Eindhoven",
+    "country": "Netherlands",
+    "coefficient": 54000,
+    "pot": 3
+  },
+  {
+    "name": "Slavia Prague",
+    "country": "Czech Republic",
+    "coefficient": 53000,
+    "pot": 3
+  },
+  {
+    "name": "Dinamo Zagreb",
+    "country": "Croatia",
+    "coefficient": 50000,
+    "pot": 3
+  },
+  {
+    "name": "Red Star Belgrade",
+    "country": "Serbia",
+    "coefficient": 40000,
+    "pot": 3
+  },
+  {
+    "name": "PAOK",
+    "country": "Greece",
+    "coefficient": 37000,
+    "pot": 3
+  },
+  {
+    "name": "Maccabi Tel Aviv",
+    "country": "Israel",
+    "coefficient": 35500,
+    "pot": 3
+  },
+  {
+    "name": "Ferencvaros",
+    "country": "Hungary",
+    "coefficient": 35000,
+    "pot": 4
+  },
+  {
+    "name": "Celtic",
+    "country": "Scotland",
+    "coefficient": 32000,
+    "pot": 4
+  },
+  {
+    "name": "AS Monaco",
+    "country": "France",
+    "coefficient": 24000,
+    "pot": 4
+  },
+  {
+    "name": "Aston Villa",
+    "country": "England",
+    "coefficient": 20860,
+    "pot": 4
+  },
+  {
+    "name": "Bologna",
+    "country": "Italy",
+    "coefficient": 18056,
+    "pot": 4
+  },
+  {
+    "name": "Girona",
+    "country": "Spain",
+    "coefficient": 17897,
+    "pot": 4
+  },
+  {
+    "name": "VfB Stuttgart",
+    "country": "Germany",
+    "coefficient": 17324,
+    "pot": 4
+  },
+  {
+    "name": "Sturm Graz",
+    "country": "Austria",
+    "coefficient": 14500,
+    "pot": 4
+  },
+  {
+    "name": "Stade Brestois",
+    "country": "France",
+    "coefficient": 13366,
+    "pot": 4
+  }
 ]

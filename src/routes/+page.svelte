@@ -1,2 +1,10 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+</script>
+
+<svelte:head>
+	<title>TODO</title>
+	<meta name="description" content="TODO"/>
+</svelte:head>
+
+<section class="flex justify-center items-center">
+</section>

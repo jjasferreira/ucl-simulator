@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Champions Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/champions-regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Champions Bold';
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/champions-bold.ttf') format('truetype');
+}
+
+.font-champions-reg {
+	font-family: 'Champions Regular';
+}
+
+.font-champions-bold {
+	font-family: 'Champions Bold';
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+button {
+	@apply text-2xl font-champions-bold py-1 px-4 rounded-full
+	shadow-md bg-blue-900
+	hover:shadow-lg hover:bg-blue-800 hover:text-white
+	focus:ring focus:ring-blue-400 focus:ring-opacity-50;
+}
