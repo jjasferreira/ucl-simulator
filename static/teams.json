@@ -2,216 +2,252 @@
   {
     "name": "Manchester City",
     "country": "England",
+    "ground": "City of Manchester Stadium",
     "coefficient": 148000,
     "pot": 1
   },
   {
     "name": "Bayern Munich",
     "country": "Germany",
+    "ground": "Munich Football Arena",
     "coefficient": 144000,
     "pot": 1
   },
   {
     "name": "Real Madrid",
     "country": "Spain",
+    "ground": "Estadio Santiago Bernabeu",
     "coefficient": 136000,
     "pot": 1
   },
   {
     "name": "Paris Saint-Germain",
     "country": "France",
+    "ground": "Parc des Princes",
     "coefficient": 116000,
     "pot": 1
   },
   {
     "name": "Liverpool",
     "country": "England",
+    "ground": "Anfield",
     "coefficient": 114000,
     "pot": 1
   },
   {
     "name": "Inter Milan",
     "country": "Italy",
+    "ground": "Stadio Giuseppe Meazza",
     "coefficient": 101000,
     "pot": 1
   },
   {
     "name": "Borussia Dortmund",
     "country": "Germany",
+    "ground": "BVB Stadion Dortmund",
     "coefficient": 97000,
     "pot": 1
   },
   {
     "name": "RB Leipzig",
     "country": "Germany",
+    "ground": "RB Arena",
     "coefficient": 97000,
     "pot": 1
   },
   {
     "name": "Barcelona",
     "country": "Spain",
+    "ground": "Estadi Olimpic Lluis Companys",
     "coefficient": 91000,
     "pot": 1
   },
   {
     "name": "Bayer Leverkusen",
     "country": "Germany",
+    "ground": "BayArena",
     "coefficient": 90000,
     "pot": 2
   },
   {
     "name": "Atletico Madrid",
     "country": "Spain",
+    "ground": "Estadio Metropolitano",
     "coefficient": 89000,
     "pot": 2
   },
   {
     "name": "Atalanta BC",
     "country": "Italy",
+    "ground": "Stadio di Bergamo",
     "coefficient": 81000,
     "pot": 2
   },
   {
     "name": "Juventus",
     "country": "Italy",
+    "ground": "Juventus Stadium",
     "coefficient": 80000,
     "pot": 2
   },
   {
     "name": "SL Benfica",
     "country": "Portugal",
+    "ground": "Estadio do Sport Lisboa e Benfica",
     "coefficient": 79000,
     "pot": 2
   },
   {
     "name": "Arsenal",
     "country": "England",
+    "ground": "Arsenal Stadium",
     "coefficient": 72000,
     "pot": 2
   },
   {
     "name": "Club Brugge",
     "country": "Belgium",
+    "ground": "Jan Breydelstadion",
     "coefficient": 64000,
     "pot": 2
   },
   {
     "name": "Rangers",
     "country": "Scotland",
+    "ground": "Ibrox Stadium",
     "coefficient": 63000,
     "pot": 2
   },
   {
     "name": "Shakhtar Donetsk",
     "country": "Ukraine",
+    "ground": "Volksparkstadion",
     "coefficient": 63000,
     "pot": 2
   },
   {
     "name": "AC Milan",
     "country": "Italy",
+    "ground": "San Siro",
     "coefficient": 59000,
     "pot": 3
   },
   {
     "name": "Feyenoord",
     "country": "Netherlands",
+    "ground": "Stadion Feijenoord",
     "coefficient": 57000,
     "pot": 3
   },
   {
     "name": "Sporting CP",
     "country": "Portugal",
+    "ground": "Estadio Jose Alvalade",
     "coefficient": 54500,
     "pot": 3
   },
   {
     "name": "PSV Eindhoven",
     "country": "Netherlands",
+    "ground": "PSV Stadion",
     "coefficient": 54000,
     "pot": 3
   },
   {
     "name": "Slavia Prague",
-    "country": "Czech Republic",
+    "country": "Czechia",
+    "ground": "Fortuna Arena",
     "coefficient": 53000,
     "pot": 3
   },
   {
     "name": "Dinamo Zagreb",
     "country": "Croatia",
+    "ground": "Stadion Maksimir",
     "coefficient": 50000,
     "pot": 3
   },
   {
     "name": "Red Star Belgrade",
     "country": "Serbia",
+    "ground": "Stadion Rajko Mitic",
     "coefficient": 40000,
     "pot": 3
   },
   {
     "name": "PAOK",
     "country": "Greece",
+    "ground": "PAOK Stadium",
     "coefficient": 37000,
     "pot": 3
   },
   {
     "name": "Maccabi Tel Aviv",
     "country": "Israel",
+    "ground": "Bloomfield Stadium",
     "coefficient": 35500,
     "pot": 3
   },
   {
     "name": "Ferencvaros",
     "country": "Hungary",
+    "ground": "Ferencvaros Stadion",
     "coefficient": 35000,
     "pot": 4
   },
   {
     "name": "Celtic",
     "country": "Scotland",
+    "ground": "Celtic Park",
     "coefficient": 32000,
     "pot": 4
   },
   {
     "name": "AS Monaco",
     "country": "France",
+    "ground": "Stade Louis II",
     "coefficient": 24000,
     "pot": 4
   },
   {
     "name": "Aston Villa",
     "country": "England",
+    "ground": "Villa Park",
     "coefficient": 20860,
     "pot": 4
   },
   {
     "name": "Bologna",
     "country": "Italy",
+    "ground": "Stadio Renato Dall'Ara",
     "coefficient": 18056,
     "pot": 4
   },
   {
     "name": "Girona",
     "country": "Spain",
+    "ground": "Estadi Municipal de Montilivi",
     "coefficient": 17897,
     "pot": 4
   },
   {
     "name": "VfB Stuttgart",
     "country": "Germany",
+    "ground": "MHPArena",
     "coefficient": 17324,
     "pot": 4
   },
   {
     "name": "Sturm Graz",
     "country": "Austria",
+    "ground": "Liebenauer Stadium",
     "coefficient": 14500,
     "pot": 4
   },
   {
     "name": "Stade Brestois",
     "country": "France",
+    "ground": "Stade Francis-Le Ble",
     "coefficient": 13366,
     "pot": 4
   }

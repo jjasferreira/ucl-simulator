@@ -3,24 +3,30 @@
 
 	let teamsPath = '/teams.json';
 	let league = new League(teamsPath);
+	let teams = null;
 	let pots = null;
 	let potsGenerated = false;
 	let fixtures = null;
-	let fixturesGenerated = false;
+	let fixturesScheduled = false;
 
 	async function generatePots() {
 		await league.loadTeams();
 		league.generatePots();
+		teams = league.teams;
 		pots = league.pots;
 		potsGenerated = true;
 	}
 
-	async function generateFixtures() {
-		league.generateFixtures();
+	async function scheduleFixtures() {
+		await league.generateFixtures();
+		league.scheduleFixtures();
+		teams = league.teams;
 		fixtures = league.fixtures;
-		fixturesGenerated = true;
-		console.log(league.teams);
+		fixturesScheduled = true;
+		console.log(teams);
+		console.log(fixtures);
 	}
+
 </script>
 
 <main class="flex flex-col items-center">
@@ -49,10 +55,35 @@
 			{/each}
 		</div>
 
-		<button class="m-5" on:click={generateFixtures}>Generate Fixtures</button>
+		{#if !fixturesScheduled}
+			<button class="m-5" on:click={scheduleFixtures}>Schedule Fixtures</button>
+		{/if}
 	{/if}
 
-	{#if fixturesGenerated}
-		<h3>{pots}</h3>
+	{#if fixturesScheduled}
+		{#each fixtures as week, w}
+			<h2>Matchweek {w + 1}</h2>
+			{#each week as fixture}
+			<div class="flex flex-col w-96 m-2 p-2 border-2 rounded-3xl">
+				<div class="flex justify-center h-6 space-x-2">
+					<div class="flex overflow-hidden w-6 rounded-full">
+						<img class="object-cover" src={`src/lib/images/countries/${teams.get(fixture.home).country}.svg`} alt={teams.get(fixture.home).country}>
+					</div>
+					<p>{teams.get(fixture.home).ground}</p>
+				</div>
+				<div class="flex flex-row justify-between h-20">
+					<div class="flex justify-center w-20">
+						<img class="h-full" src={`src/lib/images/teams/${fixture.home}.svg`} alt={fixture.home}>
+					</div>
+					<div class="flex items-center">
+						<h2>VS</h2>
+					</div>
+					<div class="flex justify-center w-20">
+						<img class="h-full" src={`src/lib/images/teams/${fixture.away}.svg`} alt={fixture.away}>
+					</div>
+				</div>
+			</div>
+			{/each}
+		{/each}
 	{/if}
 </main>
