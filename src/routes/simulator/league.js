@@ -132,30 +132,33 @@ export class League {
   generatePots() {
     this.pots = Array.from({ length: NUMBER_POTS }, () => []);
     for (let team of this.teams.values()) {
-      this.pots[team.pot - 1].push(team);
+      this.pots[team.pot - 1].push(team.name);
     }
-    DEBUG &&
-      console.log(
-        "generatePots(): pots =",
-        this.pots.map((pot) => pot.map((team) => team.name))
-      );
+    DEBUG && console.log("generatePots(): pots =", this.pots);
   }
 
   attemptGenerateFixtures() {
+    let pots_ = JSON.parse(JSON.stringify(this.pots));
     this.fixtures = [];
+    for (let team of this.teams.values()) {
+      team.fixtures = [];
+    }
     // For each pot i
     for (let i = 0; i < NUMBER_POTS; i++) {
       DEBUG && console.log("generateFixtures(): drawing pot =", i + 1);
       // While there are teams in pot i
-      while (this.pots[i].length > 0) {
+      while (pots_[i].length > 0) {
         // Get a drawing team from pot i
-        let t1 = getRandom(this.pots[i]);
+        let t1name = getRandom(pots_[i]);
+        let t1 = this.teams.get(t1name);
         DEBUG && console.log("generateFixtures(): drawing team =", t1.name);
         // For each pot j after and including pot i
         for (let j = i; j < NUMBER_POTS; j++) {
           // Draw teams until number of fixtures of pot j is two
           while (t1.fixtures.filter((f) => f.pot === j + 1).length < 2) {
-            let drawableTeams = this.pots[j].filter((t) => t.isDrawableTo(t1));
+            let drawableTeams = pots_[j]
+              .map((tname) => this.teams.get(tname))
+              .filter((t) => t.isDrawableTo(t1));
             if (drawableTeams.length === 0) {
               // No drawable teams available for drawing team in pot j
               return false;
@@ -191,7 +194,7 @@ export class League {
           }
         }
         // Remove drawing team from pot i
-        this.pots[i].splice(this.pots[i].indexOf(t1), 1);
+        pots_[i].splice(pots_[i].indexOf(t1name), 1);
       }
     }
     // Fixtures generated successfully
@@ -201,9 +204,6 @@ export class League {
   async generateFixtures() {
     let tries = 1;
     while (!this.attemptGenerateFixtures()) {
-      // While it fails, delete fixtures in teams and repopulate pots
-      await this.loadTeams();
-      this.generatePots();
       tries++;
     }
     // It is taking on average 55 tries (from 15 attempts)
@@ -275,7 +275,7 @@ export class League {
 
 // Node.js testing:
 /*
-const teamsPath = '../../../static/teams.json';
+const teamsPath = "../../../static/teams.json";
 let league = new League(teamsPath);
 await league.loadTeams();
 league.generatePots();
