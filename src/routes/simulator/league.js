@@ -29,14 +29,16 @@ const getRandom = (array) => {
 
 class Team {
   name;
+  abbreviation;
   country;
   ground;
   coefficient;
   pot;
   fixtures;
 
-  constructor(name, country, ground, coefficient, pot) {
+  constructor(name, abbreviation, country, ground, coefficient, pot) {
     this.name = name;
+    this.abbreviation = abbreviation;
     this.country = country;
     this.ground = ground;
     this.coefficient = coefficient;
@@ -48,7 +50,7 @@ class Team {
     // Not if this team is the same as the other
     if (this == other) return false;
     // Not if there is already a fixture between this team and the other
-    if (this.fixtures.some((fixture) => fixture.team === other.name))
+    if (this.fixtures.some((fixture) => fixture.name === other.name))
       return false;
     // Not if this team is from the same country as the other
     if (this.country === other.country) return false;
@@ -119,6 +121,7 @@ export class League {
         team.name,
         new Team(
           team.name,
+          team.abbreviation,
           team.country,
           team.ground,
           team.coefficient,
@@ -171,12 +174,12 @@ export class League {
             let t2 = getRandom(drawableTeams);
             let loc = t1.getLocationForFixture(t2);
             t1.fixtures.push({
-              team: t2.name,
+              name: t2.name,
               pot: t2.pot,
               location: loc,
             });
             t2.fixtures.push({
-              team: t1.name,
+              name: t1.name,
               pot: t1.pot,
               location: LOCATIONS.filter((l) => l !== loc)[0],
             });
@@ -195,6 +198,18 @@ export class League {
         }
         // Remove drawing team from pot i
         pots_[i].splice(pots_[i].indexOf(t1name), 1);
+      }
+    }
+    // For each team, sort pots of fixtures by location, with Home first
+    for (let team of this.teams.values()) {
+      for (let i = 0; i < team.fixtures.length; i += FIXTURES_PER_POT) {
+        team.fixtures.splice(
+          i,
+          2,
+          ...team.fixtures
+            .slice(i, i + 2)
+            .sort((a, b) => (a.location === "Away" ? 1 : -1))
+        );
       }
     }
     // Fixtures generated successfully
@@ -259,6 +274,15 @@ export class League {
       // Remove extra fixtures from the copy
       fixtures_ = fixtures_.filter((f) => !weeks[week].includes(f));
       week++;
+    }
+    // Add matchweeks of fixtures to the teams
+    for (let week = 0; week < NUMBER_WEEKS; week++) {
+      for (let fixture of weeks[week]) {
+        let home = this.teams.get(fixture.home);
+        let away = this.teams.get(fixture.away);
+        home.fixtures.find((f) => f.name === away.name).matchweek = week + 1;
+        away.fixtures.find((f) => f.name === home.name).matchweek = week + 1;
+      }
     }
     // Fixtures generated successfully
     this.fixtures = weeks;

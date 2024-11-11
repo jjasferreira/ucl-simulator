@@ -1,6 +1,7 @@
 [
   {
     "name": "Manchester City",
+    "abbreviation": "MCI",
     "country": "England",
     "ground": "City of Manchester Stadium",
     "coefficient": 148000,
@@ -8,6 +9,7 @@
   },
   {
     "name": "Bayern Munich",
+    "abbreviation": "BAY",
     "country": "Germany",
     "ground": "Munich Football Arena",
     "coefficient": 144000,
@@ -15,6 +17,7 @@
   },
   {
     "name": "Real Madrid",
+    "abbreviation": "RMA",
     "country": "Spain",
     "ground": "Estadio Santiago Bernabeu",
     "coefficient": 136000,
@@ -22,6 +25,7 @@
   },
   {
     "name": "Paris Saint-Germain",
+    "abbreviation": "PSG",
     "country": "France",
     "ground": "Parc des Princes",
     "coefficient": 116000,
@@ -29,6 +33,7 @@
   },
   {
     "name": "Liverpool",
+    "abbreviation": "LIV",
     "country": "England",
     "ground": "Anfield",
     "coefficient": 114000,
@@ -36,6 +41,7 @@
   },
   {
     "name": "Inter Milan",
+    "abbreviation": "INT",
     "country": "Italy",
     "ground": "Stadio Giuseppe Meazza",
     "coefficient": 101000,
@@ -43,6 +49,7 @@
   },
   {
     "name": "Borussia Dortmund",
+    "abbreviation": "DOR",
     "country": "Germany",
     "ground": "BVB Stadion Dortmund",
     "coefficient": 97000,
@@ -50,6 +57,7 @@
   },
   {
     "name": "RB Leipzig",
+    "abbreviation": "LEI",
     "country": "Germany",
     "ground": "RB Arena",
     "coefficient": 97000,
@@ -57,6 +65,7 @@
   },
   {
     "name": "Barcelona",
+    "abbreviation": "BAR",
     "country": "Spain",
     "ground": "Estadi Olimpic Lluis Companys",
     "coefficient": 91000,
@@ -64,6 +73,7 @@
   },
   {
     "name": "Bayer Leverkusen",
+    "abbreviation": "LEV",
     "country": "Germany",
     "ground": "BayArena",
     "coefficient": 90000,
@@ -71,6 +81,7 @@
   },
   {
     "name": "Atletico Madrid",
+    "abbreviation": "ATM",
     "country": "Spain",
     "ground": "Estadio Metropolitano",
     "coefficient": 89000,
@@ -78,6 +89,7 @@
   },
   {
     "name": "Atalanta BC",
+    "abbreviation": "ATA",
     "country": "Italy",
     "ground": "Stadio di Bergamo",
     "coefficient": 81000,
@@ -85,6 +97,7 @@
   },
   {
     "name": "Juventus",
+    "abbreviation": "JUV",
     "country": "Italy",
     "ground": "Juventus Stadium",
     "coefficient": 80000,
@@ -92,6 +105,7 @@
   },
   {
     "name": "SL Benfica",
+    "abbreviation": "BEN",
     "country": "Portugal",
     "ground": "Estadio do Sport Lisboa e Benfica",
     "coefficient": 79000,
@@ -99,6 +113,7 @@
   },
   {
     "name": "Arsenal",
+    "abbreviation": "ARS",
     "country": "England",
     "ground": "Arsenal Stadium",
     "coefficient": 72000,
@@ -106,6 +121,7 @@
   },
   {
     "name": "Club Brugge",
+    "abbreviation": "BRU",
     "country": "Belgium",
     "ground": "Jan Breydelstadion",
     "coefficient": 64000,
@@ -113,6 +129,7 @@
   },
   {
     "name": "Rangers",
+    "abbreviation": "RAN",
     "country": "Scotland",
     "ground": "Ibrox Stadium",
     "coefficient": 63000,
@@ -120,6 +137,7 @@
   },
   {
     "name": "Shakhtar Donetsk",
+    "abbreviation": "SHK",
     "country": "Ukraine",
     "ground": "Volksparkstadion",
     "coefficient": 63000,
@@ -127,6 +145,7 @@
   },
   {
     "name": "AC Milan",
+    "abbreviation": "MIL",
     "country": "Italy",
     "ground": "San Siro",
     "coefficient": 59000,
@@ -134,6 +153,7 @@
   },
   {
     "name": "Feyenoord",
+    "abbreviation": "FEY",
     "country": "Netherlands",
     "ground": "Stadion Feijenoord",
     "coefficient": 57000,
@@ -141,6 +161,7 @@
   },
   {
     "name": "Sporting CP",
+    "abbreviation": "SPO",
     "country": "Portugal",
     "ground": "Estadio Jose Alvalade",
     "coefficient": 54500,
@@ -148,6 +169,7 @@
   },
   {
     "name": "PSV Eindhoven",
+    "abbreviation": "PSV",
     "country": "Netherlands",
     "ground": "PSV Stadion",
     "coefficient": 54000,
@@ -155,6 +177,7 @@
   },
   {
     "name": "Slavia Prague",
+    "abbreviation": "SLA",
     "country": "Czechia",
     "ground": "Fortuna Arena",
     "coefficient": 53000,
@@ -162,6 +185,7 @@
   },
   {
     "name": "Dinamo Zagreb",
+    "abbreviation": "DZA",
     "country": "Croatia",
     "ground": "Stadion Maksimir",
     "coefficient": 50000,
@@ -169,6 +193,7 @@
   },
   {
     "name": "Red Star Belgrade",
+    "abbreviation": "ZVE",
     "country": "Serbia",
     "ground": "Stadion Rajko Mitic",
     "coefficient": 40000,
@@ -176,6 +201,7 @@
   },
   {
     "name": "PAOK",
+    "abbreviation": "PAO",
     "country": "Greece",
     "ground": "PAOK Stadium",
     "coefficient": 37000,
@@ -183,6 +209,7 @@
   },
   {
     "name": "Maccabi Tel Aviv",
+    "abbreviation": "MAC",
     "country": "Israel",
     "ground": "Bloomfield Stadium",
     "coefficient": 35500,
@@ -190,6 +217,7 @@
   },
   {
     "name": "Ferencvaros",
+    "abbreviation": "FER",
     "country": "Hungary",
     "ground": "Ferencvaros Stadion",
     "coefficient": 35000,
@@ -197,6 +225,7 @@
   },
   {
     "name": "Celtic",
+    "abbreviation": "CEL",
     "country": "Scotland",
     "ground": "Celtic Park",
     "coefficient": 32000,
@@ -204,6 +233,7 @@
   },
   {
     "name": "AS Monaco",
+    "abbreviation": "MON",
     "country": "France",
     "ground": "Stade Louis II",
     "coefficient": 24000,
@@ -211,6 +241,7 @@
   },
   {
     "name": "Aston Villa",
+    "abbreviation": "AVL",
     "country": "England",
     "ground": "Villa Park",
     "coefficient": 20860,
@@ -218,6 +249,7 @@
   },
   {
     "name": "Bologna",
+    "abbreviation": "BOL",
     "country": "Italy",
     "ground": "Stadio Renato Dall'Ara",
     "coefficient": 18056,
@@ -225,6 +257,7 @@
   },
   {
     "name": "Girona",
+    "abbreviation": "GIR",
     "country": "Spain",
     "ground": "Estadi Municipal de Montilivi",
     "coefficient": 17897,
@@ -232,6 +265,7 @@
   },
   {
     "name": "VfB Stuttgart",
+    "abbreviation": "STU",
     "country": "Germany",
     "ground": "MHPArena",
     "coefficient": 17324,
@@ -239,6 +273,7 @@
   },
   {
     "name": "Sturm Graz",
+    "abbreviation": "SGR",
     "country": "Austria",
     "ground": "Liebenauer Stadium",
     "coefficient": 14500,
@@ -246,6 +281,7 @@
   },
   {
     "name": "Stade Brestois",
+    "abbreviation": "BRE",
     "country": "France",
     "ground": "Stade Francis-Le Ble",
     "coefficient": 13366,
