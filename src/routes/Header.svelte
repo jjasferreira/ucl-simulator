@@ -1,6 +1,7 @@
 <script>
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+	import { base } from '$app/paths';
 </script>
 
 <header class="flex justify-between h-12 bg-gray-600">
@@ -11,9 +12,9 @@
 	</div>
 
 	<nav class="flex justify-center items-center bg-gray-600 text-white">
-		<a class="p-3 hover:bg-gray-300 hover:text-red-600" href="/">TODO</a>
-		<a class="p-3 hover:bg-gray-300 hover:text-red-600" href="/about">About</a>
-		<a class="p-3 hover:bg-gray-300 hover:text-red-600" href="/simulator">Simulator</a>
+		<a class="p-3 hover:bg-gray-300 hover:text-red-600" href="{base}/">TODO</a>
+		<a class="p-3 hover:bg-gray-300 hover:text-red-600" href="{base}/about">About</a>
+		<a class="p-3 hover:bg-gray-300 hover:text-red-600" href="{base}/simulator">Simulator</a>
 	</nav>
 
 	<div class="w-12">
