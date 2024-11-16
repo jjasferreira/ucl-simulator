@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-	<title>TODO</title>
+	<title>UCL Simulator</title>
 	<meta name="description" content="TODO"/>
 </svelte:head>
 

@@ -18,7 +18,7 @@
 	</nav>
 
 	<div class="w-12">
-		<a class="flex justify-center items-center h-full" href="https://github.com/sveltejs/kit">
+		<a class="flex justify-center items-center h-full" href="https://github.com/jjasferreira/ucl-simulator">
 			<img class="h-8 w-8" src={github} alt="GitHub" />
 		</a>
 	</div>

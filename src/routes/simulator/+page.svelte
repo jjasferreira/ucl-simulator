@@ -1,5 +1,5 @@
 <script>
-	import { League } from './league.js';
+	import { League } from '$lib/league.js';
 	import { fade } from 'svelte/transition';
 	import { base } from '$app/paths';
 
@@ -173,7 +173,7 @@
 				<div>
 					<div class="flex justify-center h-6 pt-2 space-x-1 bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full">
 						<div class="w-4 flex overflow-hidden rounded-full">
-							<img class="object-cover" src={`/images/countries/${league.teams.get(fixture.home).country}.svg`} alt={league.teams.get(fixture.home).country}>
+							<img class="object-cover" src={`${base}/images/countries/${league.teams.get(fixture.home).country}.svg`} alt={league.teams.get(fixture.home).country}>
 						</div>
 						<p class="text-xs pt-px">{league.teams.get(fixture.home).ground}</p>
 					</div>
