@@ -1,5 +1,6 @@
 <script>
 	import { League } from './league.js';
+	import { fade } from 'svelte/transition';
 
 	let teamsPath = '/teams.json';
 	let league = new League(teamsPath);
@@ -21,7 +22,12 @@
 	async function scheduleFixtures() {
 		league.scheduleFixtures();
 		fixturesScheduled = true;
-		console.log("LEAGUE", league);
+	}
+
+	async function playMatchweek(week) {
+		league.playMatchweek(week);
+		league.matchweekPlayed[week - 1] = true;
+		//console.log("LEAGUE", league);
 	}
 
 </script>
@@ -41,12 +47,12 @@
 			{#each league.pots as pot, p}
 			<div class="m-4 min-w-52">
 				<h3 class="flex justify-center border-b-2">POT {p + 1}</h3>
-			  	{#each pot as teamname}
+			  	{#each pot as teamid}
 					<div class="flex h-12 p-2 border-b-2 border-x-2">
 						<div class="flex w-8 justify-center">
-							<img class="h-full" src={`src/lib/images/teams/${teamname}.svg`} alt="Logo"/>
+							<img class="h-full" src={`src/lib/images/teams/${teamid}.svg`} alt="Logo"/>
 						</div>
-						<p class="flex ml-2 items-center">{teamname}</p>
+						<p class="flex ml-2 items-center">{league.teams.get(teamid).name}</p>
 					</div>
 			 	{/each}
 			</div>
@@ -116,25 +122,25 @@
 					</tr>
 				</thead>
 				<tbody>
-					{#each pot as teamname}
+					{#each pot as teamid}
 					<tr class="odd:bg-blue-950 odd:bg-opacity-35 even:bg-blue-900 even:bg-opacity-35">
 						<td class="w-48 py-2">
 							<div class="flex h-6 px-3">
 								<div class="flex w-6 justify-center">
-									<img class="h-full" src={`src/lib/images/teams/${teamname}.svg`} alt="Logo"/>
+									<img class="h-full" src={`src/lib/images/teams/${teamid}.svg`} alt="Logo"/>
 								</div>
-								<p class="flex ml-2 items-center">{teamname}</p>
+								<p class="flex ml-2 items-center">{league.teams.get(teamid).name}</p>
 							</div>
 						</td>
-						{#each league.teams.get(teamname).fixtures as fixture}
+						{#each league.teams.get(teamid).fixtures as fixture}
 						<td class="py-2">
 							<div class="flex h-6 px-3 border-l-2 border-blue-600 border-opacity-35 relative">
 								<div class="flex w-6 justify-center">
-									<img class="h-full" src={`src/lib/images/teams/${fixture.name}.svg`} alt={fixture.name}/>
+									<img class="h-full" src={`src/lib/images/teams/${fixture.id}.svg`} alt={league.teams.get(fixture.id).name}/>
 								</div>
-								<p class="flex ml-2 items-center">{league.teams.get(fixture.name).abbreviation}</p>
+								<p class="flex ml-2 items-center">{fixture.id}</p>
 								{#if fixturesScheduled}
-								<div class="w-3 h-3 flex items-center justify-center absolute bottom-0 left-7 bg-blue-700 rounded-full" style="font-size: 0.625rem; line-height: 0.875rem;">
+								<div in:fade={{duration: 1000}} class="w-3 h-3 flex items-center justify-center absolute bottom-0 left-7 bg-blue-700 rounded-full" style="font-size: 0.625rem; line-height: 0.875rem">
 									{fixture.matchweek}
 								</div>
 								{/if}
@@ -156,27 +162,49 @@
 		<!-- Matchweeks -->
 		{#each league.fixtures as week, w}
 			<h2>Matchweek {w + 1}</h2>
-			{#each week as fixture}
-			<div class="flex flex-col w-96 m-2 p-2 border-2 rounded-3xl">
-				<div class="flex justify-center h-6 space-x-2">
-					<div class="flex overflow-hidden w-6 rounded-full">
-						<img class="object-cover" src={`src/lib/images/countries/${league.teams.get(fixture.home).country}.svg`} alt={league.teams.get(fixture.home).country}>
+			{#if !league.matchweekPlayed[w]}
+				<button class="h-30 mb-6 text-lg" on:click={() => playMatchweek(w + 1)}>▶ Play</button>
+			{:else}
+				<button class="h-30 mb-6 text-lg" disabled on:click={() => playMatchweek(w + 1)}>▶ Play</button>
+			{/if}
+			<div class="mb-12 grid gap-x-16 gap-y-10 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+			{#each week as fixture, f}
+				<div>
+					<div class="flex justify-center h-6 pt-2 space-x-1 bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full">
+						<div class="w-4 flex overflow-hidden rounded-full">
+							<img class="object-cover" src={`src/lib/images/countries/${league.teams.get(fixture.home).country}.svg`} alt={league.teams.get(fixture.home).country}>
+						</div>
+						<p class="text-xs pt-px">{league.teams.get(fixture.home).ground}</p>
 					</div>
-					<p>{league.teams.get(fixture.home).ground}</p>
+					<div class="h-16 flex font-champions-display text-2xl bg-blue-900 bg-opacity-35">
+						<div class="w-16 p-2 flex justify-center rounded-tr-full rounded-bl-3xl" style="background-color: {league.teams.get(fixture.home).color}">
+							<img class="h-full" src={`src/lib/images/teams/${fixture.home}.svg`} alt={league.teams.get(fixture.home).name}>
+						</div>
+						<div class="w-16 py-3">
+							<div class="h-full flex justify-center border-r border-blue-600 border-opacity-35">
+								{#if league.matchweekPlayed[w]}
+									<h3 in:fade={{duration: 1000, delay: f * 750}}>{league.teams.get(fixture.home).fixtures.find(f => f.id === fixture.away).result[0]}</h3>
+								{/if}
+							</div>
+						</div>
+						<div class="w-16 py-3">
+							<div class="h-full flex justify-center border-l border-blue-600 border-opacity-35">
+								{#if league.matchweekPlayed[w]}
+									<h3 in:fade={{duration: 1000, delay: f * 750}}>{league.teams.get(fixture.home).fixtures.find(f => f.id === fixture.away).result[1]}</h3>
+								{/if}
+							</div>
+						</div>
+						<div class="w-16 p-2 flex justify-center rounded-tl-full" style="background-color: {league.teams.get(fixture.away).color}">
+							<img class="h-full" src={`src/lib/images/teams/${fixture.away}.svg`} alt={league.teams.get(fixture.away).name}>
+						</div>
+					</div>
+					<!--
+					<div class="flex justify-between h-6 py-1 bg-blue-900 bg-opacity-35 rounded-bl-full rounded-br-full">
+					</div>
+					-->
 				</div>
-				<div class="flex flex-row justify-between h-20">
-					<div class="flex justify-center w-20">
-						<img class="h-full" src={`src/lib/images/teams/${fixture.home}.svg`} alt={fixture.home}>
-					</div>
-					<div class="flex items-center">
-						<h2>VS</h2>
-					</div>
-					<div class="flex justify-center w-20">
-						<img class="h-full" src={`src/lib/images/teams/${fixture.away}.svg`} alt={fixture.away}>
-					</div>
-				</div>
-			</div>
 			{/each}
+			</div>
 		{/each}
 	{/if}
 </main>
