@@ -3,45 +3,68 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'Champions Regular';
-	font-style: normal;
-	font-weight: normal;
-	src: url('/fonts/champions-regular.ttf') format('truetype');
+  font-family: "Champions Light";
+  src: url("/fonts/champions-light.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: 'Champions Bold';
-	font-style: normal;
-	font-weight: normal;
-	src: url('/fonts/champions-bold.ttf') format('truetype');
+  font-family: "Champions Regular";
+  src: url("/fonts/champions-regular.ttf") format("truetype");
 }
 
-.font-champions-reg {
-	font-family: 'Champions Regular';
+@font-face {
+  font-family: "Champions Bold";
+  src: url("/fonts/champions-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Champions ExtraBold";
+  src: url("/fonts/champions-extrabold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Champions Display";
+  src: url("/fonts/champions-display.ttf") format("truetype");
+}
+
+.font-champions-light {
+  font-family: "Champions Light";
+}
+
+.font-champions-regular {
+  font-family: "Champions Regular";
 }
 
 .font-champions-bold {
-	font-family: 'Champions Bold';
+  font-family: "Champions Bold";
+}
+
+.font-champions-extrabold {
+  font-family: "Champions ExtraBold";
+}
+
+.font-champions-display {
+  font-family: "Champions Display";
 }
 
 h1 {
-	font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 h2 {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 h3 {
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 h4 {
-	font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 button {
-	@apply text-2xl font-champions-bold py-1 px-4 rounded-full
+  @apply text-2xl font-champions-bold py-1 px-4 rounded-full
 	shadow-md bg-blue-900
 	hover:shadow-lg hover:bg-blue-800 hover:text-white
 	focus:ring focus:ring-blue-400 focus:ring-opacity-50;
