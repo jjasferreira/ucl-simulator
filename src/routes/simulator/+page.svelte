@@ -1,6 +1,7 @@
 <script>
 	import { League } from './league.js';
 	import { fade } from 'svelte/transition';
+	import { base } from '$app/paths';
 
 	let teamsPath = '/teams.json';
 	let league = new League(teamsPath);
@@ -50,7 +51,7 @@
 			  	{#each pot as teamid}
 					<div class="flex h-12 p-2 border-b-2 border-x-2">
 						<div class="flex w-8 justify-center">
-							<img class="h-full" src={`src/lib/images/teams/${teamid}.svg`} alt="Logo"/>
+							<img class="h-full" src={`${base}/images/teams/${teamid}.svg`} alt="Logo"/>
 						</div>
 						<p class="flex ml-2 items-center">{league.teams.get(teamid).name}</p>
 					</div>
@@ -127,7 +128,7 @@
 						<td class="w-48 py-2">
 							<div class="flex h-6 px-3">
 								<div class="flex w-6 justify-center">
-									<img class="h-full" src={`src/lib/images/teams/${teamid}.svg`} alt="Logo"/>
+									<img class="h-full" src={`${base}/images/teams/${teamid}.svg`} alt="Logo"/>
 								</div>
 								<p class="flex ml-2 items-center">{league.teams.get(teamid).name}</p>
 							</div>
@@ -136,7 +137,7 @@
 						<td class="py-2">
 							<div class="flex h-6 px-3 border-l-2 border-blue-600 border-opacity-35 relative">
 								<div class="flex w-6 justify-center">
-									<img class="h-full" src={`src/lib/images/teams/${fixture.id}.svg`} alt={league.teams.get(fixture.id).name}/>
+									<img class="h-full" src={`${base}/images/teams/${fixture.id}.svg`} alt={league.teams.get(fixture.id).name}/>
 								</div>
 								<p class="flex ml-2 items-center">{fixture.id}</p>
 								{#if fixturesScheduled}
@@ -172,13 +173,13 @@
 				<div>
 					<div class="flex justify-center h-6 pt-2 space-x-1 bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full">
 						<div class="w-4 flex overflow-hidden rounded-full">
-							<img class="object-cover" src={`src/lib/images/countries/${league.teams.get(fixture.home).country}.svg`} alt={league.teams.get(fixture.home).country}>
+							<img class="object-cover" src={`/images/countries/${league.teams.get(fixture.home).country}.svg`} alt={league.teams.get(fixture.home).country}>
 						</div>
 						<p class="text-xs pt-px">{league.teams.get(fixture.home).ground}</p>
 					</div>
 					<div class="h-16 flex font-champions-display text-2xl bg-blue-900 bg-opacity-35">
 						<div class="w-16 p-2 flex justify-center rounded-tr-full rounded-bl-3xl" style="background-color: {league.teams.get(fixture.home).color}">
-							<img class="h-full" src={`src/lib/images/teams/${fixture.home}.svg`} alt={league.teams.get(fixture.home).name}>
+							<img class="h-full" src={`${base}/images/teams/${fixture.home}.svg`} alt={league.teams.get(fixture.home).name}>
 						</div>
 						<div class="w-16 py-3">
 							<div class="h-full flex justify-center border-r border-blue-600 border-opacity-35">
@@ -195,7 +196,7 @@
 							</div>
 						</div>
 						<div class="w-16 p-2 flex justify-center rounded-tl-full" style="background-color: {league.teams.get(fixture.away).color}">
-							<img class="h-full" src={`src/lib/images/teams/${fixture.away}.svg`} alt={league.teams.get(fixture.away).name}>
+							<img class="h-full" src={`${base}/images/teams/${fixture.away}.svg`} alt={league.teams.get(fixture.away).name}>
 						</div>
 					</div>
 					<!--
