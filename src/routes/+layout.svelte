@@ -5,9 +5,12 @@
 </script>
 
 <div class="flex flex-col min-h-screen font-champions-regular bg-blue-950 text-blue-50">
+
 	<Header />
 
-	<main class="flex-grow p-12">
+	<h1 class="px-3 font-champions-display">UEFA Champions League Simulator</h1>
+
+	<main class="flex-grow">
 		<slot />
 	</main>
 

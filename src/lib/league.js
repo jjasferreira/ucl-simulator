@@ -117,10 +117,11 @@ class Team {
 
 export class League {
   teamsPath;
-  teams;
-  pots;
-  fixtures;
-  matchweekPlayed;
+  teams; // Map { id1: Team, id2: Team, ... }
+  pots; // Array [ [id1, id2, ...], [id3, ...], ... ]
+  fixtures; // Array [ [ { home, away }, ... ], ... ]
+  matchweekPlayed; // Array [ true, false, ... ]
+  standings; // Array [ id1, id2, ... ]
 
   constructor(teamsPath) {
     this.teamsPath = teamsPath;
@@ -128,10 +129,7 @@ export class League {
     this.pots = null;
     this.fixtures = null;
     this.matchweekPlayed = Array.from({ length: NUMBER_WEEKS }, () => false);
-    //this.loadTeams();
-    //this.generatePots();
-    //this.generateFixtures();
-    //this.scheduleFixtures();
+    this.standings = null;
   }
 
   async loadTeams() {
@@ -159,6 +157,15 @@ export class League {
       );
     });
     DEBUG && console.log("loadTeams(): teams =", this.teams);
+  }
+
+  initializeStandings() {
+    // Convert teams map to array and sort it by name
+    let teamsArray = Array.from(this.teams.values());
+    teamsArray.sort((a, b) => a.name.localeCompare(b.name));
+    // Map to array of team IDs only
+    this.standings = teamsArray.map((team) => team.id);
+    DEBUG && console.log("initializeStandings(): standings =", this.standings);
   }
 
   generatePots() {
@@ -338,6 +345,7 @@ export class League {
     }
     // Mark the matchweek as played
     this.matchweekPlayed[week - 1] = true;
+    this.updateStandings();
   }
 
   playMatch(home, away) {
@@ -400,6 +408,20 @@ export class League {
     home.goalsAgainst += awayGoals;
     away.goalsFor += awayGoals;
     away.goalsAgainst += homeGoals;
+  }
+
+  updateStandings() {
+    // Convert teams map to array and sort it by points, goal difference and goals scored
+    let teamsArray = Array.from(this.teams.values());
+    teamsArray.sort((a, b) => {
+      if (a.points !== b.points) return b.points - a.points;
+      if (a.goalsFor - a.goalsAgainst !== b.goalsFor - b.goalsAgainst)
+        return b.goalsFor - b.goalsAgainst - (a.goalsFor - a.goalsAgainst);
+      return b.goalsFor - a.goalsFor;
+    });
+    // Map to array of team IDs only
+    this.standings = teamsArray.map((team) => team.id);
+    DEBUG && console.log("updateStandings(): standings =", this.standings);
   }
 }
 

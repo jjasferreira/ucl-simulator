@@ -64,8 +64,5 @@ h4 {
 }
 
 button {
-  @apply text-2xl font-champions-bold py-1 px-4 rounded-full
-	shadow-md bg-blue-900
-	hover:shadow-lg hover:bg-blue-800 hover:text-white
-	focus:ring focus:ring-blue-400 focus:ring-opacity-50;
+  @apply pb-px px-2.5 rounded-full shadow-md hover:shadow-lg hover:text-white;
 }
