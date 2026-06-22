@@ -23,12 +23,12 @@ import adapterStatic from "@sveltejs/adapter-static";
 const config = {
   kit: {
     adapter: adapterStatic({
-      fallback: "404.html",
+      //fallback: "404.html",
     }),
     // Comment the paths if you want to run in dev mode.
-    paths: {
-      base: process.argv.includes("dev") ? "" : process.env.BASE_PATH,
-    },
+    //paths: {
+    //base: process.argv.includes("dev") ? "" : process.env.BASE_PATH,
+    //},
   },
 };
 

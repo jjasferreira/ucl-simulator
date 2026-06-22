@@ -1,16 +1,21 @@
 import { base } from "$app/paths";
+import { get } from "svelte/store";
 
 // Check if running in Node.js
+/*
 const isNode =
   typeof process !== "undefined" &&
   process.versions != null &&
   process.versions.node != null;
+*/
 
 // Import necessary modules based on the environment
+/*
 let fs;
-//if (isNode) {
-//  fs = await import("fs/promises");
-//}
+if (isNode) {
+  fs = await import("fs/promises");
+}
+*/
 
 const NUMBER_TEAMS = 36;
 const NUMBER_POTS = 4;
@@ -45,7 +50,8 @@ class Team {
   coefficient;
   pot;
 
-  fixtures;
+  fixtures; //this is going to have a reference to index of the matches list inside league. rm this after matches is working
+  matches;
   matchesPlayed;
   wins;
   draws;
@@ -64,6 +70,7 @@ class Team {
     this.pot = pot;
 
     this.fixtures = [];
+    this.matches = [];
     this.matchesPlayed = 0;
     this.wins = 0;
     this.draws = 0;
@@ -115,33 +122,103 @@ class Team {
   }
 }
 
+class Match {
+  id;
+  home;
+  away;
+  played;
+  round;
+  homeGoals;
+  awayGoals;
+  //homeOdds;
+  //drawOdds;
+  //awayOdds;
+
+  constructor(id, home, away) {
+    this.id = id;
+    this.home = home;
+    this.away = away;
+    this.played = false;
+  }
+
+  setRound(round) {
+    this.round = round;
+  }
+
+  setResult(homeGoals, awayGoals) {
+    this.homeGoals = homeGoals;
+    this.awayGoals = awayGoals;
+    this.played = true;
+  }
+}
+
 export class League {
   teamsPath;
   teams; // Map { id1: Team, id2: Team, ... }
   pots; // Array [ [id1, id2, ...], [id3, ...], ... ]
-  fixtures; // Array [ [ { home, away }, ... ], ... ]
-  matchweekPlayed; // Array [ true, false, ... ]
-  standings; // Array [ id1, id2, ... ]
+  table; // Array [ id1, id2, ... ]
+  round; // int
+  fixtures; // Array [ [ { home, away }, ... ], ... ] //rm when matches is working
+  matches; // Map { id1: Match, id2: Match, ... } // NEW
+  rounds;
 
   constructor(teamsPath) {
     this.teamsPath = teamsPath;
-    this.teams = null;
+    this.teams = new Map();
     this.pots = null;
-    this.fixtures = null;
-    this.matchweekPlayed = Array.from({ length: NUMBER_WEEKS }, () => false);
-    this.standings = null;
+    this.table = [];
+    this.round = 0;
+    this.fixtures = null; //rm when matches is working, also these types of null lines inits are not needed
+    this.matches = new Map(); // NEW
+    this.rounds = Array.from({ length: NUMBER_WEEKS }, () => []); // NEW
+
+    /*[
+      [
+        [17, 18],
+        [15, 16],
+      ],
+      [
+        [23, 24],
+        [9, 10],
+      ],
+      [
+        [21, 22],
+        [11, 12],
+      ],
+      [
+        [19, 20],
+        [13, 14],
+      ],
+      [
+        [18, 17],
+        [16, 15],
+      ],
+      [
+        [24, 23],
+        [10, 9],
+      ],
+      [
+        [22, 21],
+        [12, 11],
+      ],
+      [
+        [20, 19],
+        [14, 13],
+      ],
+    ];
+    */
   }
 
   async loadTeams() {
-    this.teams = new Map();
     let json;
-    //if (isNode) {
-    //  const data = await fs.readFile(this.teamsPath, "utf-8");
-    //  json = JSON.parse(data);
-    //} else {
-    const response = await fetch(`${base}${this.teamsPath}`);
-    json = await response.json();
-    //}
+    /*
+    if (isNode) {
+      const data = await fs.readFile(this.teamsPath, "utf-8");
+      json = JSON.parse(data);
+    } else */ {
+      const response = await fetch(`${base}${this.teamsPath}`);
+      json = await response.json();
+    }
     json.forEach((team) => {
       this.teams.set(
         team.id,
@@ -159,13 +236,13 @@ export class League {
     DEBUG && console.log("loadTeams(): teams =", this.teams);
   }
 
-  initializeStandings() {
+  initializeTable() {
     // Convert teams map to array and sort it by name
     let teamsArray = Array.from(this.teams.values());
     teamsArray.sort((a, b) => a.name.localeCompare(b.name));
     // Map to array of team IDs only
-    this.standings = teamsArray.map((team) => team.id);
-    DEBUG && console.log("initializeStandings(): standings =", this.standings);
+    this.table = teamsArray.map((team) => team.id);
+    DEBUG && console.log("initializeTable(): table =", this.table);
   }
 
   generatePots() {
@@ -179,8 +256,10 @@ export class League {
   attemptGenerateFixtures() {
     let pots_ = JSON.parse(JSON.stringify(this.pots));
     this.fixtures = [];
+    this.matches.clear(); // NEW
     for (let team of this.teams.values()) {
       team.fixtures = [];
+      team.matches = []; // NEW
     }
     // For each pot i
     for (let i = 0; i < NUMBER_POTS; i++) {
@@ -220,9 +299,18 @@ export class League {
               location: LOCATIONS.filter((l) => l !== loc)[0],
             });
             this.fixtures.push({
-              home: loc === LOCATIONS[0] ? t1.id : t2.id,
-              away: loc === LOCATIONS[0] ? t2.id : t1.id,
+              home: loc === "Home" ? t1.id : t2.id,
+              away: loc === "Home" ? t2.id : t1.id,
             });
+            // NEW
+            let home = loc === "Home" ? t1.id : t2.id;
+            let away = loc === "Home" ? t2.id : t1.id;
+            const matchid = this.matches.size;
+            this.matches.set(matchid, new Match(matchid, home, away));
+            t1.matches.push(matchid);
+            t2.matches.push(matchid);
+            // END NEW
+
             DEBUG &&
               console.log(
                 "generateFixtures(): drawn team =",
@@ -265,7 +353,7 @@ export class League {
   attemptScheduleFixtures() {
     let tries = 1;
     let weeks = Array.from({ length: NUMBER_WEEKS }, () => []);
-    let fixtures_ = JSON.parse(JSON.stringify(this.fixtures));
+    let matches_ = [...this.matches.values()];
     let week = 0;
     // For each matchweek
     while (week < NUMBER_WEEKS) {
@@ -276,19 +364,21 @@ export class League {
       // For 18 fixtures
       while (match < FIXTURES_PER_WEEK) {
         // Choose a random fixture whose teams are not already playing in the current week
-        let availableFixtures = fixtures_.filter(
+        let availableFixtures = matches_.filter(
           (f) => !playingTeams.has(f.home) && !playingTeams.has(f.away)
         );
         // If no available fixtures, reset the current matchweek and try again
         if (availableFixtures.length === 0) {
           if (weekTries > 1000) {
             weeks = Array.from({ length: NUMBER_WEEKS }, () => []);
-            fixtures_ = JSON.parse(JSON.stringify(this.fixtures));
+            this.rounds = Array.from({ length: NUMBER_WEEKS }, () => []);
+            matches_ = [...this.matches.values()];
             week = 0;
             DEBUG &&
               console.log("scheduleFixtures(): resetting week =", week + 1);
           }
           weeks[week] = [];
+          this.rounds[week] = [];
           playingTeams.clear();
           match = 0;
           weekTries++;
@@ -303,12 +393,13 @@ export class League {
         let fixture = getRandom(availableFixtures);
         DEBUG && console.log("scheduleFixtures(): chosen fixture =", fixture);
         weeks[week].push(fixture);
+        this.rounds[week].push(fixture.id);
         playingTeams.add(fixture.home);
         playingTeams.add(fixture.away);
         match++;
       }
       // Remove extra fixtures from the copy
-      fixtures_ = fixtures_.filter((f) => !weeks[week].includes(f));
+      matches_ = matches_.filter((f) => !weeks[week].includes(f));
       week++;
     }
     // Add matchweeks of fixtures to the teams
@@ -318,6 +409,11 @@ export class League {
         let away = this.teams.get(fixture.away);
         home.fixtures.find((f) => f.id === away.id).matchweek = week + 1;
         away.fixtures.find((f) => f.id === home.id).matchweek = week + 1;
+      }
+    }
+    for (let week = 0; week < NUMBER_WEEKS; week++) {
+      for (let matchid of this.rounds[week]) {
+        this.matches.get(matchid).setRound(week + 1);
       }
     }
     // Fixtures generated successfully
@@ -335,82 +431,67 @@ export class League {
   playMatchweek(week) {
     DEBUG && console.log("playMatchweek(week): week =", week);
     // Get the fixtures for the specific week
-    let matchweekFixtures = this.fixtures[week - 1];
+    let matchids = this.rounds[week - 1];
     // Simulate each match in the week
-    for (let fixture of matchweekFixtures) {
-      let home = this.teams.get(fixture.home);
-      let away = this.teams.get(fixture.away);
+    for (let matchid of matchids) {
       // Play match and determine result
-      this.playMatch(home, away);
+      this.playMatch(this.matches.get(matchid));
     }
     // Mark the matchweek as played
-    this.matchweekPlayed[week - 1] = true;
-    this.updateStandings();
+    this.round = week;
+    this.updateTable();
   }
 
-  playMatch(home, away) {
-    DEBUG &&
-      console.log("playMatch(home, away): home =", home.id, "away =", away.id);
-    // Calculate win probabilities with 10% boost for home team
-    let homeAdvantage = 1.1;
-    let homeProbability =
-      (home.coefficient * homeAdvantage) /
-      (home.coefficient * homeAdvantage + away.coefficient);
-    let awayProbability = 1 - homeProbability;
-    DEBUG &&
-      console.log(
-        "playMatch(home, away): homeProbability =",
-        homeProbability,
-        "awayProbability =",
-        awayProbability
-      );
+  playMatch(match) {
+    const home = this.teams.get(match.home);
+    const away = this.teams.get(match.away);
+
+    // Calculate odds
+    const homeBoost = 0.05,
+      drawFactor = 0.02,
+      drawLimit = 0.5;
+    const homeProb =
+      home.coefficient / (home.coefficient + away.coefficient) + homeBoost;
+    const drawOdds = Math.min(
+      drawFactor / Math.abs(2 * homeProb - 1),
+      drawLimit
+    );
+    const homeOdds = homeProb * (1 - drawOdds);
+
     // Generate random number to determine winner
-    let random = Math.random();
+    const diff = Math.abs(2 * homeOdds + drawOdds - 1);
+    const roll = Math.random();
     let homeGoals, awayGoals;
-    if (random < homeProbability) {
-      // Home team wins
-      awayGoals = getRandomBetween(0, 2);
-      homeGoals = getRandomBetween(awayGoals + 1, awayGoals + 3);
-    } else {
-      // Away team wins
-      homeGoals = getRandomBetween(0, 2);
-      awayGoals = getRandomBetween(homeGoals + 1, homeGoals + 3);
-    }
-    DEBUG &&
-      console.log(
-        "playMatch(home, away): random =",
-        random,
-        "homeGoals =",
-        homeGoals,
-        "awayGoals =",
-        awayGoals
+    if (roll < drawOdds) {
+      // Draw - likely more goals if teams are evenly matched
+      const maxGoals = Math.floor(7 * (1 - diff));
+      homeGoals = awayGoals = Math.floor(
+        Math.pow(Math.random(), 2) * (maxGoals + 1)
       );
-    // Create result and update both teams stats accordingly
-    home.fixtures.find((f) => f.id === away.id).result = [homeGoals, awayGoals];
-    away.fixtures.find((f) => f.id === home.id).result = [homeGoals, awayGoals];
-    home.matchesPlayed++;
-    away.matchesPlayed++;
-    if (homeGoals > awayGoals) {
-      home.wins++;
-      away.losses++;
+      home.points++, away.points++;
+      home.draws++, away.draws++;
+    } else if (roll < drawOdds + homeOdds) {
+      // Home win - difference of goals is bigger the bigger the difference of chances are
+      const maxGoals = 1 + Math.floor(10 * diff);
+      homeGoals = getRandomBetween(1, maxGoals);
+      awayGoals = getRandomBetween(0, homeGoals * (1 - diff) - 1);
       home.points += 3;
-    } else if (homeGoals < awayGoals) {
-      home.losses++;
-      away.wins++;
-      away.points += 3;
+      home.wins++, away.losses++;
     } else {
-      home.draws++;
-      away.draws++;
-      home.points++;
-      away.points++;
+      // Away win
+      const maxGoals = 1 + Math.floor(7 * diff);
+      awayGoals = getRandomBetween(1, maxGoals);
+      homeGoals = getRandomBetween(0, awayGoals * (1 - diff) - 1);
+      away.points += 3;
+      home.losses++, away.wins++;
     }
-    home.goalsFor += homeGoals;
-    home.goalsAgainst += awayGoals;
-    away.goalsFor += awayGoals;
-    away.goalsAgainst += homeGoals;
+    match.setResult(homeGoals, awayGoals);
+    home.matchesPlayed++, away.matchesPlayed++;
+    (home.goalsFor += homeGoals), (away.goalsFor += awayGoals);
+    (home.goalsAgainst += awayGoals), (away.goalsAgainst += homeGoals);
   }
 
-  updateStandings() {
+  updateTable() {
     // Convert teams map to array and sort it by points, goal difference and goals scored
     let teamsArray = Array.from(this.teams.values());
     teamsArray.sort((a, b) => {
@@ -420,8 +501,8 @@ export class League {
       return b.goalsFor - a.goalsFor;
     });
     // Map to array of team IDs only
-    this.standings = teamsArray.map((team) => team.id);
-    DEBUG && console.log("updateStandings(): standings =", this.standings);
+    this.table = teamsArray.map((team) => team.id);
+    DEBUG && console.log("updateTable(): table =", this.table);
   }
 }
 
@@ -434,4 +515,5 @@ league.generatePots();
 await league.generateFixtures();
 league.scheduleFixtures();
 league.playMatchweek(1);
+console.log(league);
 */

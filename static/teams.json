@@ -144,15 +144,6 @@
     "pot": 2
   },
   {
-    "id": "RAN",
-    "name": "Rangers",
-    "country": "Scotland",
-    "ground": "Ibrox Stadium",
-    "color": "#1B458F",
-    "coefficient": 63000,
-    "pot": 2
-  },
-  {
     "id": "SHK",
     "name": "Shakhtar",
     "country": "Ukraine",
@@ -168,7 +159,7 @@
     "ground": "San Siro",
     "color": "#FB090B",
     "coefficient": 59000,
-    "pot": 3
+    "pot": 2
   },
   {
     "id": "FEY",
@@ -198,21 +189,30 @@
     "pot": 3
   },
   {
-    "id": "SLA",
-    "name": "Slavia Prague",
-    "country": "Czechia",
-    "ground": "Fortuna Arena",
-    "color": "#D7141A",
-    "coefficient": 53000,
-    "pot": 3
-  },
-  {
     "id": "DZA",
     "name": "GNK Dinamo",
     "country": "Croatia",
     "ground": "Stadion Maksimir",
     "color": "#1D3A8D",
     "coefficient": 50000,
+    "pot": 3
+  },
+  {
+    "id": "SAL",
+    "name": "Salzburg",
+    "country": "Austria",
+    "ground": "Stadion Salzburg",
+    "color": "#FFFFFF",
+    "coefficient": 47000,
+    "pot": 3
+  },
+  {
+    "id": "LIL",
+    "name": "Lille",
+    "country": "France",
+    "ground": "Stade Pierre Mauroy",
+    "color": "#E01E13",
+    "coefficient": 43000,
     "pot": 3
   },
   {
@@ -225,31 +225,13 @@
     "pot": 3
   },
   {
-    "id": "PAO",
-    "name": "PAOK",
-    "country": "Greece",
-    "ground": "PAOK Stadium",
-    "color": "#000000",
+    "id": "YOU",
+    "name": "Young Boys",
+    "country": "Switzerland",
+    "ground": "Stadion Wankdorf",
+    "color": "#F9CC11",
     "coefficient": 37000,
     "pot": 3
-  },
-  {
-    "id": "MAC",
-    "name": "Maccabi",
-    "country": "Israel",
-    "ground": "Bloomfield Stadium",
-    "color": "#FFF100",
-    "coefficient": 35500,
-    "pot": 3
-  },
-  {
-    "id": "FER",
-    "name": "Ferencvaros",
-    "country": "Hungary",
-    "ground": "Ferencvaros Stadion",
-    "color": "#006600",
-    "coefficient": 35000,
-    "pot": 4
   },
   {
     "id": "CEL",
@@ -258,6 +240,15 @@
     "ground": "Celtic Park",
     "color": "#018749",
     "coefficient": 32000,
+    "pot": 3
+  },
+  {
+    "id": "SLO",
+    "name": "Slovan Bratislava",
+    "country": "Slovakia",
+    "ground": "Narodny Futbalovy Stadion",
+    "color": "#2CB2E7",
+    "coefficient": 27000,
     "pot": 4
   },
   {
@@ -267,6 +258,15 @@
     "ground": "Stade Louis II",
     "color": "#E51B22",
     "coefficient": 24000,
+    "pot": 4
+  },
+  {
+    "id": "SPA",
+    "name": "Sparta Praha",
+    "country": "Czechia",
+    "ground": "Stadion Letna",
+    "color": "#7C141C",
+    "coefficient": 23000,
     "pot": 4
   },
   {
