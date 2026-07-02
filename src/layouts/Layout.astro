@@ -1,0 +1,23 @@
+---
+import Header from '@components/Header.svelte';
+import Footer from '@components/Footer.svelte';
+import '@styles/global.css';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>UCL Simulator</title>
+	</head>
+	<body class="bg-blue-950 text-blue-50 font-champions-regular min-h-screen flex flex-col">
+		<Header />
+		<h1 class="px-3 text-center font-champions-display">UEFA Champions League Simulator</h1>
+		<main class="mx-auto grow">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

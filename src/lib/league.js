@@ -1,6 +1,3 @@
-import { base } from "$app/paths";
-import { get } from "svelte/store";
-
 // Check if running in Node.js
 /*
 const isNode =
@@ -153,7 +150,6 @@ class Match {
 }
 
 export class League {
-  teamsPath;
   teams; // Map { id1: Team, id2: Team, ... }
   pots; // Array [ [id1, id2, ...], [id3, ...], ... ]
   table; // Array [ id1, id2, ... ]
@@ -162,8 +158,7 @@ export class League {
   matches; // Map { id1: Match, id2: Match, ... } // NEW
   rounds;
 
-  constructor(teamsPath) {
-    this.teamsPath = teamsPath;
+  constructor(teamsJson) {
     this.teams = new Map();
     this.pots = null;
     this.table = [];
@@ -207,19 +202,9 @@ export class League {
       ],
     ];
     */
-  }
 
-  async loadTeams() {
-    let json;
-    /*
-    if (isNode) {
-      const data = await fs.readFile(this.teamsPath, "utf-8");
-      json = JSON.parse(data);
-    } else */ {
-      const response = await fetch(`${base}${this.teamsPath}`);
-      json = await response.json();
-    }
-    json.forEach((team) => {
+    // Instantly populate the Map using the passed JSON data
+    teamsJson.forEach((team) => {
       this.teams.set(
         team.id,
         new Team(
@@ -233,7 +218,8 @@ export class League {
         )
       );
     });
-    DEBUG && console.log("loadTeams(): teams =", this.teams);
+
+    console.log("Constructor: teams populated =", this.teams);
   }
 
   initializeTable() {
