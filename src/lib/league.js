@@ -1,19 +1,3 @@
-// Check if running in Node.js
-/*
-const isNode =
-  typeof process !== "undefined" &&
-  process.versions != null &&
-  process.versions.node != null;
-*/
-
-// Import necessary modules based on the environment
-/*
-let fs;
-if (isNode) {
-  fs = await import("fs/promises");
-}
-*/
-
 const NUMBER_TEAMS = 36;
 const NUMBER_POTS = 4;
 const NUMBER_WEEKS = 8;
@@ -150,65 +134,27 @@ class Match {
 }
 
 export class League {
-  teams; // Map { id1: Team, id2: Team, ... }
-  pots; // Array [ [id1, id2, ...], [id3, ...], ... ]
-  table; // Array [ id1, id2, ... ]
-  round; // int
+  teams; // Map { tid: Team, ... }
+  pots; // Array [ [tid1, tid2, ...], [tid3, ...], ... ]
+  table; // Array [ tid1, tid2, ... ]
   fixtures; // Array [ [ { home, away }, ... ], ... ] //rm when matches is working
-  matches; // Map { id1: Match, id2: Match, ... } // NEW
-  rounds;
+  matches; // Map { mid: Match, ... }
+  rounds; // Array [ [mid1, mid2, ...], [mid3, ...], ... ]
+  round; // int
 
-  constructor(teamsJson) {
+  constructor(teams) {
     this.teams = new Map();
-    this.pots = null;
+    this.pots = Array.from({ length: NUMBER_POTS }, () => []);
     this.table = [];
+    this.matches = new Map();
+    this.rounds = Array.from({ length: NUMBER_WEEKS }, () => []);
     this.round = 0;
-    this.fixtures = null; //rm when matches is working, also these types of null lines inits are not needed
-    this.matches = new Map(); // NEW
-    this.rounds = Array.from({ length: NUMBER_WEEKS }, () => []); // NEW
 
-    /*[
-      [
-        [17, 18],
-        [15, 16],
-      ],
-      [
-        [23, 24],
-        [9, 10],
-      ],
-      [
-        [21, 22],
-        [11, 12],
-      ],
-      [
-        [19, 20],
-        [13, 14],
-      ],
-      [
-        [18, 17],
-        [16, 15],
-      ],
-      [
-        [24, 23],
-        [10, 9],
-      ],
-      [
-        [22, 21],
-        [12, 11],
-      ],
-      [
-        [20, 19],
-        [14, 13],
-      ],
-    ];
-    */
-
-    // Instantly populate the Map using the passed JSON data
-    teamsJson.forEach((team) => {
+    Object.entries(teams).forEach(([id, team]) => {
       this.teams.set(
-        team.id,
+        id,
         new Team(
-          team.id,
+          id,
           team.name,
           team.country,
           team.ground,
@@ -219,7 +165,7 @@ export class League {
       );
     });
 
-    console.log("Constructor: teams populated =", this.teams);
+    DEBUG && console.log("Constructor: teams populated =", this.teams);
   }
 
   initializeTable() {
@@ -232,7 +178,7 @@ export class League {
   }
 
   generatePots() {
-    this.pots = Array.from({ length: NUMBER_POTS }, () => []);
+    // Put each team id in the correponding pot array
     for (let team of this.teams.values()) {
       this.pots[team.pot - 1].push(team.id);
     }
@@ -326,7 +272,7 @@ export class League {
     return true;
   }
 
-  async generateFixtures() {
+  generateFixtures() {
     let tries = 1;
     while (!this.attemptGenerateFixtures()) {
       tries++;
@@ -491,15 +437,3 @@ export class League {
     DEBUG && console.log("updateTable(): table =", this.table);
   }
 }
-
-// Node.js testing:
-/*
-const teamsPath = "../../../static/teams.json";
-let league = new League(teamsPath);
-await league.loadTeams();
-league.generatePots();
-await league.generateFixtures();
-league.scheduleFixtures();
-league.playMatchweek(1);
-console.log(league);
-*/

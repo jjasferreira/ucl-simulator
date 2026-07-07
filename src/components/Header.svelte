@@ -1,4 +1,4 @@
-<header class="h-11 px-3 py-1.5 flex justify-between bg-blue-900">
+<header class="h-11 px-3 py-1.5 flex justify-between bg-dark-blue">
   <a class="w-8" href="/">
     <img class="p-0.5 h-full" src="/images/icons/ucl.svg" alt="UCL" />
   </a>

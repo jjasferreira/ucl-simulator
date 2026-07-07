@@ -1,6 +1,4 @@
 ---
-import Header from '@components/Header.svelte';
-import Footer from '@components/Footer.svelte';
 import '@styles/global.css';
 ---
 <!doctype html>
@@ -8,16 +6,13 @@ import '@styles/global.css';
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>UCL Simulator</title>
 	</head>
-	<body class="bg-blue-950 text-blue-50 font-champions-regular min-h-screen flex flex-col">
-		<Header />
-		<h1 class="px-3 text-center font-champions-display">UEFA Champions League Simulator</h1>
-		<main class="mx-auto grow">
+	<body class="w-screen bg-dark-blue font-champions-regular text-white">
+		<main class="bg-linear-to-tr from-dark-blue to-electric-blue/75 mx-auto overflow-y-hidden flex flex-col min-h-screen">
 			<slot />
 		</main>
-		<Footer />
 	</body>
 </html>

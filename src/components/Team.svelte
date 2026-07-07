@@ -45,7 +45,7 @@
         </div>
         <!-- Logo -->
         <div class="w-32 h-32 p-2 flex justify-center bg-black bg-opacity-50">
-          <img class="h-full" src={`/images/teams/${id}.svg`} alt={team.name} />
+          <img class="h-full" src="images/teams/{id}.svg" alt={team.name} />
         </div>
         <!-- Name -->
         <h1 class="text-3xl font-bold">{team.name}</h1>
@@ -54,7 +54,7 @@
           <div class="w-5 h-5 mt-0.5 flex overflow-hidden rounded-full">
             <img
               class="object-cover"
-              src={`/images/countries/${team.country}.svg`}
+              src="images/countries/{team.country}.svg"
               alt={team.country}
             />
           </div>
@@ -64,11 +64,11 @@
       <!-- Player -->
       <img
         class="absolute translate-x-16"
-        src={`/images/players/${id}.webp`}
+        src="images/players/{id}.webp"
         alt={team.name}
       />
       <!-- Background -->
-      <img class="" src={`/images/stadium.jpg`} alt="UEFA Champions League" />
+      <img class="" src="images/stadium.jpg" alt="UEFA Champions League" />
     </div>
     <div class="mt-3">
       <p>{team.ground}</p>

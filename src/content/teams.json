@@ -1,6 +1,5 @@
-[
-  {
-    "id": "MCI",
+{
+  "MCI": {
     "name": "Man City",
     "country": "England",
     "ground": "City of Manchester Stadium",
@@ -8,8 +7,7 @@
     "coefficient": 148000,
     "pot": 1
   },
-  {
-    "id": "BAY",
+  "BAY": {
     "name": "Bayern Munchen",
     "country": "Germany",
     "ground": "Munich Football Arena",
@@ -17,8 +15,7 @@
     "coefficient": 144000,
     "pot": 1
   },
-  {
-    "id": "RMA",
+  "RMA": {
     "name": "Real Madrid",
     "country": "Spain",
     "ground": "Estadio Santiago Bernabeu",
@@ -26,8 +23,7 @@
     "coefficient": 136000,
     "pot": 1
   },
-  {
-    "id": "PSG",
+  "PSG": {
     "name": "Paris",
     "country": "France",
     "ground": "Parc des Princes",
@@ -35,8 +31,7 @@
     "coefficient": 116000,
     "pot": 1
   },
-  {
-    "id": "LIV",
+  "LIV": {
     "name": "Liverpool",
     "country": "England",
     "ground": "Anfield",
@@ -44,8 +39,7 @@
     "coefficient": 114000,
     "pot": 1
   },
-  {
-    "id": "INT",
+  "INT": {
     "name": "Inter",
     "country": "Italy",
     "ground": "Stadio Giuseppe Meazza",
@@ -53,8 +47,7 @@
     "coefficient": 101000,
     "pot": 1
   },
-  {
-    "id": "DOR",
+  "DOR": {
     "name": "Dortmund",
     "country": "Germany",
     "ground": "BVB Stadion Dortmund",
@@ -62,8 +55,7 @@
     "coefficient": 97000,
     "pot": 1
   },
-  {
-    "id": "LEI",
+  "LEI": {
     "name": "Leipzig",
     "country": "Germany",
     "ground": "RB Arena",
@@ -71,8 +63,7 @@
     "coefficient": 97000,
     "pot": 1
   },
-  {
-    "id": "BAR",
+  "BAR": {
     "name": "Barcelona",
     "country": "Spain",
     "ground": "Estadi Olimpic Lluis Companys",
@@ -80,8 +71,7 @@
     "coefficient": 91000,
     "pot": 1
   },
-  {
-    "id": "LEV",
+  "LEV": {
     "name": "Leverkusen",
     "country": "Germany",
     "ground": "BayArena",
@@ -89,8 +79,7 @@
     "coefficient": 90000,
     "pot": 2
   },
-  {
-    "id": "ATM",
+  "ATM": {
     "name": "Atleti",
     "country": "Spain",
     "ground": "Estadio Metropolitano",
@@ -98,8 +87,7 @@
     "coefficient": 89000,
     "pot": 2
   },
-  {
-    "id": "ATA",
+  "ATA": {
     "name": "Atalanta",
     "country": "Italy",
     "ground": "Stadio di Bergamo",
@@ -107,8 +95,7 @@
     "coefficient": 81000,
     "pot": 2
   },
-  {
-    "id": "JUV",
+  "JUV": {
     "name": "Juventus",
     "country": "Italy",
     "ground": "Juventus Stadium",
@@ -116,8 +103,7 @@
     "coefficient": 80000,
     "pot": 2
   },
-  {
-    "id": "BEN",
+  "BEN": {
     "name": "Benfica",
     "country": "Portugal",
     "ground": "Estadio do Sport Lisboa e Benfica",
@@ -125,8 +111,7 @@
     "coefficient": 79000,
     "pot": 2
   },
-  {
-    "id": "ARS",
+  "ARS": {
     "name": "Arsenal",
     "country": "England",
     "ground": "Arsenal Stadium",
@@ -134,8 +119,7 @@
     "coefficient": 72000,
     "pot": 2
   },
-  {
-    "id": "BRU",
+  "BRU": {
     "name": "Club Brugge",
     "country": "Belgium",
     "ground": "Jan Breydelstadion",
@@ -143,8 +127,7 @@
     "coefficient": 64000,
     "pot": 2
   },
-  {
-    "id": "SHK",
+  "SHK": {
     "name": "Shakhtar",
     "country": "Ukraine",
     "ground": "Volksparkstadion",
@@ -152,8 +135,7 @@
     "coefficient": 63000,
     "pot": 2
   },
-  {
-    "id": "MIL",
+  "MIL": {
     "name": "Milan",
     "country": "Italy",
     "ground": "San Siro",
@@ -161,8 +143,7 @@
     "coefficient": 59000,
     "pot": 2
   },
-  {
-    "id": "FEY",
+  "FEY": {
     "name": "Feyenoord",
     "country": "Netherlands",
     "ground": "Stadion Feijenoord",
@@ -170,8 +151,7 @@
     "coefficient": 57000,
     "pot": 3
   },
-  {
-    "id": "SPO",
+  "SPO": {
     "name": "Sporting",
     "country": "Portugal",
     "ground": "Estadio Jose Alvalade",
@@ -179,8 +159,7 @@
     "coefficient": 54500,
     "pot": 3
   },
-  {
-    "id": "PSV",
+  "PSV": {
     "name": "PSV",
     "country": "Netherlands",
     "ground": "PSV Stadion",
@@ -188,8 +167,7 @@
     "coefficient": 54000,
     "pot": 3
   },
-  {
-    "id": "DZA",
+  "DZA": {
     "name": "GNK Dinamo",
     "country": "Croatia",
     "ground": "Stadion Maksimir",
@@ -197,8 +175,7 @@
     "coefficient": 50000,
     "pot": 3
   },
-  {
-    "id": "SAL",
+  "SAL": {
     "name": "Salzburg",
     "country": "Austria",
     "ground": "Stadion Salzburg",
@@ -206,8 +183,7 @@
     "coefficient": 47000,
     "pot": 3
   },
-  {
-    "id": "LIL",
+  "LIL": {
     "name": "Lille",
     "country": "France",
     "ground": "Stade Pierre Mauroy",
@@ -215,8 +191,7 @@
     "coefficient": 43000,
     "pot": 3
   },
-  {
-    "id": "ZVE",
+  "ZVE": {
     "name": "Crvena Zvezda",
     "country": "Serbia",
     "ground": "Stadion Rajko Mitic",
@@ -224,8 +199,7 @@
     "coefficient": 40000,
     "pot": 3
   },
-  {
-    "id": "YOU",
+  "YOU": {
     "name": "Young Boys",
     "country": "Switzerland",
     "ground": "Stadion Wankdorf",
@@ -233,8 +207,7 @@
     "coefficient": 37000,
     "pot": 3
   },
-  {
-    "id": "CEL",
+  "CEL": {
     "name": "Celtic",
     "country": "Scotland",
     "ground": "Celtic Park",
@@ -242,8 +215,7 @@
     "coefficient": 32000,
     "pot": 3
   },
-  {
-    "id": "SLO",
+  "SLO": {
     "name": "Slovan Bratislava",
     "country": "Slovakia",
     "ground": "Narodny Futbalovy Stadion",
@@ -251,8 +223,7 @@
     "coefficient": 27000,
     "pot": 4
   },
-  {
-    "id": "MON",
+  "MON": {
     "name": "Monaco",
     "country": "France",
     "ground": "Stade Louis II",
@@ -260,8 +231,7 @@
     "coefficient": 24000,
     "pot": 4
   },
-  {
-    "id": "SPA",
+  "SPA": {
     "name": "Sparta Praha",
     "country": "Czechia",
     "ground": "Stadion Letna",
@@ -269,8 +239,7 @@
     "coefficient": 23000,
     "pot": 4
   },
-  {
-    "id": "AVL",
+  "AVL": {
     "name": "Aston Villa",
     "country": "England",
     "ground": "Villa Park",
@@ -278,8 +247,7 @@
     "coefficient": 20860,
     "pot": 4
   },
-  {
-    "id": "BOL",
+  "BOL": {
     "name": "Bologna",
     "country": "Italy",
     "ground": "Stadio Renato Dall'Ara",
@@ -287,8 +255,7 @@
     "coefficient": 18056,
     "pot": 4
   },
-  {
-    "id": "GIR",
+  "GIR": {
     "name": "Girona",
     "country": "Spain",
     "ground": "Estadi Municipal de Montilivi",
@@ -296,8 +263,7 @@
     "coefficient": 17897,
     "pot": 4
   },
-  {
-    "id": "STU",
+  "STU": {
     "name": "Stuttgart",
     "country": "Germany",
     "ground": "MHPArena",
@@ -305,8 +271,7 @@
     "coefficient": 17324,
     "pot": 4
   },
-  {
-    "id": "SGR",
+  "SGR": {
     "name": "Sturm Graz",
     "country": "Austria",
     "ground": "Liebenauer Stadium",
@@ -314,8 +279,7 @@
     "coefficient": 14500,
     "pot": 4
   },
-  {
-    "id": "BRE",
+  "BRE": {
     "name": "Brest",
     "country": "France",
     "ground": "Stade Francis-Le Ble",
@@ -323,4 +287,4 @@
     "coefficient": 13366,
     "pot": 4
   }
-]
+}

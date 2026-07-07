@@ -6,6 +6,17 @@
   --font-champions-bold: "Champions Bold", sans-serif;
   --font-champions-extrabold: "Champions ExtraBold", sans-serif;
   --font-champions-display: "Champions Display", serif;
+
+  --color-dark-blue: #010056;
+  --color-electric-blue: #0232FF;
+  --color-silver: #B2BEBE;
+  --color-purple: #9A00FF;
+  --color-magenta: #FF51A2;
+  --color-red: #FF0045;
+  --color-orange: #FF6D4F;
+  --color-yellow: #FFD300;
+  --color-green: #00F084;
+  --color-cyan: #00EEFF;
 }
 
 @font-face { font-family: "Champions Light"; src: url("/fonts/champions-light.ttf") format("truetype"); }
@@ -18,5 +29,3 @@ h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 h4 { font-size: 1.25em; }
-
-button { @apply pb-px px-2.5 rounded-full shadow-md hover:shadow-lg hover:text-white; }
