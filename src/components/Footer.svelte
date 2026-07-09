@@ -1,14 +1,14 @@
-<footer class="h-11 py-2 bg-blue-900 bg-opacity-50">
+<footer class="py-2 bg-blue-900 bg-opacity-50 h-11">
   <div class="text-center">
     Made with
     <img
-      class="mb-px h-5 w-5 inline-block blue-200"
-      src="/images/icons/heart.svg"
+      class="inline-block w-5 h-5 mb-px blue-200"
+      src="icon/heart.svg"
       alt="Love"
     />
     by
     <a
-      class="font-champions-bold text-blue-200"
+      class="text-blue-200 font-champions-bold"
       href="https://github.com/jjasferreira"
       target="_blank"
       rel="noopener noreferrer"

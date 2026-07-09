@@ -5,7 +5,7 @@
 <section>
   {#each pots as pot, p}
     <h3 class="text-center">Pot {p + 1} Fixtures</h3>
-    <div class="max-w-full overflow-x-auto">
+    <div class="flex max-w-full overflow-x-auto scrollbar-none">
       <table class="mb-5">
         <thead>
           <tr>
@@ -99,14 +99,14 @@
             >
               <td class="w-48 py-2">
                 <div class="flex h-6 px-3">
-                  <div class="flex w-6 justify-center">
+                  <div class="flex justify-center w-6">
                     <img
                       class="h-full"
-                      src="images/teams/{team.id}.svg"
+                      src="team/{team.id}.svg"
                       alt={team.name}
                     />
                   </div>
-                  <p class="flex ml-2 items-center">{team.name}</p>
+                  <p class="flex items-center ml-2">{team.name}</p>
                 </div>
               </td>
               {#each team.matches
@@ -125,19 +125,19 @@
                     : teams.get(match.home)}
                 <td class="py-2">
                   <div
-                    class="flex h-6 px-3 border-l-2 border-blue-600 border-opacity-35 relative"
+                    class="relative flex h-6 px-3 border-l-2 border-blue-600 border-opacity-35"
                   >
-                    <div class="flex w-6 justify-center">
+                    <div class="flex justify-center w-6">
                       <img
                         class="h-full"
-                        src="images/teams/{opponent.id}.svg"
+                        src="team/{opponent.id}.svg"
                         alt={opponent.name}
                       />
                     </div>
-                    <p class="flex ml-2 items-center">{opponent.id}</p>
+                    <p class="flex items-center ml-2">{opponent.id}</p>
                     {#if scheduled}
                       <div
-                        class="w-3 h-3 flex items-center justify-center absolute bottom-0 left-7 bg-blue-700 rounded-full"
+                        class="absolute bottom-0 flex items-center justify-center w-3 h-3 bg-blue-700 rounded-full left-7"
                         style="font-size: 0.625rem; line-height: 0.875rem"
                       >
                         {match.round}

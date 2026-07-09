@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="py-28 flex justify-center fixed inset-0 overflow-y-auto bg-black bg-opacity-50 rounded-none"
+  class="fixed inset-0 flex justify-center overflow-y-auto bg-black bg-opacity-50 rounded-none py-28"
   on:click={(team == null, close)}
   role="button"
   tabindex="-2"
@@ -16,7 +16,7 @@
 >
   <!-- Modal -->
   <div
-    class="w-5/6 p-1 flex flex-col items-center rounded"
+    class="flex flex-col items-center w-5/6 p-1 rounded"
     style="background-color: {team.color}"
     on:click|stopPropagation
     role="button"
@@ -29,23 +29,19 @@
       <!-- Close -->
       <div class="absolute top-3 left-3">
         <button class="bg-blue-900 hover:bg-blue-800" on:click={close}>
-          <img
-            class="h-6 w-6 my-1"
-            src={`/images/icons/arrow-left.svg`}
-            alt="Close"
-          />
+          <img class="w-6 h-6 my-1" src={`icon/arrow-left.svg`} alt="Close" />
         </button>
       </div>
       <!-- Content -->
       <div class="absolute bottom-6 left-3">
         <!-- Trophies -->
         <div class="flex h-6 mt-1 space-x-1">
-          <img class="w-6" src={`/images/icons/trophy.svg`} alt="3" />
+          <img class="w-6" src={`icon/trophy.svg`} alt="3" />
           <p class="text-md">3</p>
         </div>
         <!-- Logo -->
-        <div class="w-32 h-32 p-2 flex justify-center bg-black bg-opacity-50">
-          <img class="h-full" src="images/teams/{id}.svg" alt={team.name} />
+        <div class="flex justify-center w-32 h-32 p-2 bg-black bg-opacity-50">
+          <img class="h-full" src="team/{id}.svg" alt={team.name} />
         </div>
         <!-- Name -->
         <h1 class="text-3xl font-bold">{team.name}</h1>
@@ -54,7 +50,7 @@
           <div class="w-5 h-5 mt-0.5 flex overflow-hidden rounded-full">
             <img
               class="object-cover"
-              src="images/countries/{team.country}.svg"
+              src="country/{team.country}.svg"
               alt={team.country}
             />
           </div>
@@ -64,7 +60,7 @@
       <!-- Player -->
       <img
         class="absolute translate-x-16"
-        src="images/players/{id}.webp"
+        src="player/{id}.webp"
         alt={team.name}
       />
       <!-- Background -->

@@ -7,12 +7,12 @@
   type="button"
   aria-label={id}
   {onclick}
-  class="rounded-full cursor-pointer px-2.5 border-2 border-cyan hover:bg-cyan hover:text-dark-blue hover:border-cyan {add} {tab ===
+  class="transition-colors h-8 rounded-full cursor-pointer px-2.5 border-[1.75px] border-cyan hover:bg-cyan hover:text-dark-blue hover:border-cyan {add} {tab ===
   id
     ? 'bg-cyan text-dark-blue'
     : 'bg-dark-blue text-cyan'}"
 >
-  <p class="font-champions-bold text-lg capitalize">
+  <p class="text-lg capitalize font-champions-bold">
     {id}
   </p>
 </button>

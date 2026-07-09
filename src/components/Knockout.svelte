@@ -63,78 +63,78 @@
         <div class="flex items-center">
           <div class="w-64">
             <div
-              class="h-6 justify-between flex bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full"
+              class="flex justify-between h-6 bg-blue-900 rounded-tl-full rounded-tr-full bg-opacity-35"
             ></div>
-            <div class="h-16 flex bg-blue-900 bg-opacity-35">
+            <div class="flex h-16 bg-blue-900 bg-opacity-35">
               <div
-                class="w-32 flex flex-col items-center border-r border-blue-600 border-opacity-35"
+                class="flex flex-col items-center w-32 border-r border-blue-600 border-opacity-35"
               >
-                <div class="h-8 flex">
+                <div class="flex h-8">
                   <div
-                    class="w-8 flex justify-center items-center font-champions-bold text-xl bg-blue-900"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-900 font-champions-bold"
                   >
                     {kopo[i][0][0]}
                   </div>
                   <div
-                    class="w-4 flex justify-center items-center font-champions-light text-3xl text-blue-600 text-opacity-35"
+                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-champions-light text-opacity-35"
                   >
                     /
                   </div>
                   <div
-                    class="w-8 flex justify-center items-center font-champions-bold text-xl bg-blue-900"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-900 font-champions-bold"
                   >
                     {kopo[i][0][1]}
                   </div>
                 </div>
-                <div class="h-8 flex space-x-4">
-                  <div class="w-8 p-1 flex justify-center">
+                <div class="flex h-8 space-x-4">
+                  <div class="flex justify-center w-8 p-1">
                     <img
                       class="h-full"
-                      src="images/teams/{team1.id}.svg"
+                      src="team/{team1.id}.svg"
                       alt={team1.name}
                     />
                   </div>
-                  <div class="w-8 p-1 flex justify-center">
+                  <div class="flex justify-center w-8 p-1">
                     <img
                       class="h-full"
-                      src="images/teams/{team2.id}.svg"
+                      src="team/{team2.id}.svg"
                       alt={team2.name}
                     />
                   </div>
                 </div>
               </div>
               <div
-                class="w-32 flex flex-col items-center border-l border-blue-600 border-opacity-35"
+                class="flex flex-col items-center w-32 border-l border-blue-600 border-opacity-35"
               >
-                <div class="h-8 flex">
+                <div class="flex h-8">
                   <div
-                    class="w-8 flex justify-center items-center font-champions-bold text-xl bg-blue-800"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-800 font-champions-bold"
                   >
                     {kopo[i][1][0]}
                   </div>
                   <div
-                    class="w-4 flex justify-center items-center font-champions-light text-3xl text-blue-600 text-opacity-35"
+                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-champions-light text-opacity-35"
                   >
                     /
                   </div>
                   <div
-                    class="w-8 flex justify-center items-center font-champions-bold text-xl bg-blue-800"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-800 font-champions-bold"
                   >
                     {kopo[i][1][1]}
                   </div>
                 </div>
-                <div class="h-8 flex space-x-4">
-                  <div class="w-8 p-1 flex justify-center">
+                <div class="flex h-8 space-x-4">
+                  <div class="flex justify-center w-8 p-1">
                     <img
                       class="h-full"
-                      src="images/teams/{team3.id}.svg"
+                      src="team/{team3.id}.svg"
                       alt={team3.name}
                     />
                   </div>
-                  <div class="w-8 p-1 flex justify-center">
+                  <div class="flex justify-center w-8 p-1">
                     <img
                       class="h-full"
-                      src="images/teams/{team4.id}.svg"
+                      src="team/{team4.id}.svg"
                       alt={team4.name}
                     />
                   </div>
@@ -142,7 +142,7 @@
               </div>
             </div>
             <div
-              class="h-6 bg-blue-900 bg-opacity-35 rounded-bl-full rounded-br-full"
+              class="h-6 bg-blue-900 rounded-bl-full rounded-br-full bg-opacity-35"
             ></div>
           </div>
           <div class="w-10 h-0.5 bg-blue-900"></div>
@@ -163,46 +163,46 @@
           <div class="w-10 h-0.5 bg-blue-900"></div>
           <div class="w-64">
             <div
-              class="h-6 justify-between flex bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full"
+              class="flex justify-between h-6 bg-blue-900 rounded-tl-full rounded-tr-full bg-opacity-35"
             ></div>
-            <div class="h-16 flex bg-blue-900 bg-opacity-35">
+            <div class="flex h-16 bg-blue-900 bg-opacity-35">
               <div
-                class="w-32 text-center flex items-center border-r border-blue-600 border-opacity-35"
+                class="flex items-center w-32 text-center border-r border-blue-600 border-opacity-35"
               >
                 KO PLAY-OFFS WINNER
               </div>
               <div
-                class="w-32 flex flex-col items-center border-l border-blue-600 border-opacity-35"
+                class="flex flex-col items-center w-32 border-l border-blue-600 border-opacity-35"
               >
-                <div class="h-8 flex">
+                <div class="flex h-8">
                   <div
-                    class="w-8 flex justify-center items-center font-champions-bold text-xl bg-cyan-400 text-blue-900"
+                    class="flex items-center justify-center w-8 text-xl text-blue-900 font-champions-bold bg-cyan-400"
                   >
                     {ro16[i][1][0]}
                   </div>
                   <div
-                    class="w-4 flex justify-center items-center font-champions-light text-3xl text-blue-600 text-opacity-35"
+                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-champions-light text-opacity-35"
                   >
                     /
                   </div>
                   <div
-                    class="w-8 flex justify-center items-center font-champions-bold text-xl bg-cyan-400 text-blue-900"
+                    class="flex items-center justify-center w-8 text-xl text-blue-900 font-champions-bold bg-cyan-400"
                   >
                     {ro16[i][1][1]}
                   </div>
                 </div>
-                <div class="h-8 flex space-x-4">
-                  <div class="w-8 p-1 flex justify-center">
+                <div class="flex h-8 space-x-4">
+                  <div class="flex justify-center w-8 p-1">
                     <img
                       class="h-full"
-                      src="images/teams/{team3.id}.svg"
+                      src="team/{team3.id}.svg"
                       alt={team3.name}
                     />
                   </div>
-                  <div class="w-8 p-1 flex justify-center">
+                  <div class="flex justify-center w-8 p-1">
                     <img
                       class="h-full"
-                      src="images/teams/{team4.id}.svg"
+                      src="team/{team4.id}.svg"
                       alt={team4.name}
                     />
                   </div>
@@ -210,7 +210,7 @@
               </div>
             </div>
             <div
-              class="h-6 bg-blue-900 bg-opacity-35 rounded-bl-full rounded-br-full"
+              class="h-6 bg-blue-900 rounded-bl-full rounded-br-full bg-opacity-35"
             ></div>
           </div>
           <div class="w-10 h-0.5 bg-blue-900"></div>
@@ -229,13 +229,13 @@
             <div class="w-10 h-0.5 bg-blue-900"></div>
             <div class="w-64">
               <div
-                class="h-6 bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full"
+                class="h-6 bg-blue-900 rounded-tl-full rounded-tr-full bg-opacity-35"
               ></div>
-              <div class="h-16 bg-blue-900 bg-opacity-35 text-center">
+              <div class="h-16 text-center bg-blue-900 bg-opacity-35">
                 <p>Match</p>
               </div>
               <div
-                class="h-6 bg-blue-900 bg-opacity-35 rounded-bl-full rounded-br-full"
+                class="h-6 bg-blue-900 rounded-bl-full rounded-br-full bg-opacity-35"
               ></div>
             </div>
             <div class="w-10 h-0.5 bg-blue-900"></div>
@@ -248,20 +248,20 @@
       <div class="px-3 pt-0.5 bg-blue-900 rounded-xl text-sm whitespace-nowrap">
         SEMI-FINALS
       </div>
-      <div class="flex flex-col h-full justify-between py-33">
+      <div class="flex flex-col justify-between h-full py-33">
         {#each Array(2) as _}
           <div class="flex items-center">
             <div class="w-0.5 h-76 bg-blue-900"></div>
             <div class="w-10 h-0.5 bg-blue-900"></div>
             <div class="w-64">
               <div
-                class="h-6 bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full"
+                class="h-6 bg-blue-900 rounded-tl-full rounded-tr-full bg-opacity-35"
               ></div>
-              <div class="h-16 bg-blue-900 bg-opacity-35 text-center">
+              <div class="h-16 text-center bg-blue-900 bg-opacity-35">
                 <p>Match</p>
               </div>
               <div
-                class="h-6 bg-blue-900 bg-opacity-35 rounded-bl-full rounded-br-full"
+                class="h-6 bg-blue-900 rounded-bl-full rounded-br-full bg-opacity-35"
               ></div>
             </div>
             <div class="w-10 h-0.5 bg-blue-900"></div>
@@ -274,19 +274,19 @@
       <div class="px-3 pt-0.5 bg-blue-600 rounded-xl text-sm whitespace-nowrap">
         FINAL
       </div>
-      <div class="flex h-full justify-center">
+      <div class="flex justify-center h-full">
         <div class="flex items-center">
           <div class="w-0.5 h-152 bg-blue-900"></div>
           <div class="w-10 h-0.5 bg-blue-900"></div>
           <div class="w-64">
             <div
-              class="h-6 bg-blue-900 bg-opacity-35 rounded-tl-full rounded-tr-full"
+              class="h-6 bg-blue-900 rounded-tl-full rounded-tr-full bg-opacity-35"
             ></div>
-            <div class="h-16 bg-blue-900 bg-opacity-35 text-center">
+            <div class="h-16 text-center bg-blue-900 bg-opacity-35">
               <p>Match</p>
             </div>
             <div
-              class="h-6 bg-blue-900 bg-opacity-35 rounded-bl-full rounded-br-full"
+              class="h-6 bg-blue-900 rounded-bl-full rounded-br-full bg-opacity-35"
             ></div>
           </div>
         </div>

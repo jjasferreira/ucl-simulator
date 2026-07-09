@@ -19,11 +19,11 @@
   --color-cyan: #00EEFF;
 }
 
-@font-face { font-family: "Champions Light"; src: url("/fonts/champions-light.ttf") format("truetype"); }
-@font-face { font-family: "Champions Regular"; src: url("/fonts/champions-regular.ttf") format("truetype"); }
-@font-face { font-family: "Champions Bold"; src: url("/fonts/champions-bold.ttf") format("truetype"); }
-@font-face { font-family: "Champions ExtraBold"; src: url("/fonts/champions-extrabold.ttf") format("truetype"); }
-@font-face { font-family: "Champions Display"; src: url("/fonts/champions-display.ttf") format("truetype"); }
+@font-face { font-family: "Champions Light"; src: url("/font/champions-light.ttf") format("truetype"); }
+@font-face { font-family: "Champions Regular"; src: url("/font/champions-regular.ttf") format("truetype"); }
+@font-face { font-family: "Champions Bold"; src: url("/font/champions-bold.ttf") format("truetype"); }
+@font-face { font-family: "Champions ExtraBold"; src: url("/font/champions-extrabold.ttf") format("truetype"); }
+@font-face { font-family: "Champions Display"; src: url("/font/champions-display.ttf") format("truetype"); }
 
 h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
