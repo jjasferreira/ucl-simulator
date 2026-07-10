@@ -77,7 +77,7 @@
   </div>
 
   {#if tab === "about"}
-    <About />
+    <About teams={league.teams} />
   {:else if tab === "pots"}
     <Pots pots={league.pots} teams={league.teams} />
   {:else if tab === "fixtures"}
@@ -91,6 +91,7 @@
         teams={league.teams}
         matches={league.matches}
         {scheduled}
+        round={league.round}
       />
     {/if}
   {:else if tab === "matches"}

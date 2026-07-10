@@ -1,113 +1,81 @@
 <script>
-  let { pots, teams, matches, scheduled } = $props();
+  import Team from "@components/Team.svelte";
+  let { pots, teams, matches, scheduled, round } = $props();
+  const potstyles = {
+    "1": { border: "border-b-purple", bg: "bg-purple", text: "" },
+    "2": { border: "border-b-cyan", bg: "bg-cyan", text: "text-dark-blue" },
+    "3": { border: "border-b-magenta", bg: "bg-magenta", text: "" },
+    "4": { border: "border-b-green", bg: "bg-green", text: "text-dark-blue" },
+  };
+  const venues = ["HOME", "AWAY"];
+  let selected = $state(null);
 </script>
 
-<section>
-  {#each pots as pot, p}
-    <h3 class="text-center">Pot {p + 1} Fixtures</h3>
-    <div class="flex max-w-full overflow-x-auto scrollbar-none">
-      <table class="mb-5">
+<section class="mt-3.5">
+  {#each pots as pot, n}
+    <div class="max-w-full overflow-x-auto scrollbar-none">
+      <table
+        class="mb-5 table-fixed border-separate border-spacing-x-0.75 border-spacing-y-0.75"
+        style="--pot-color: {n === 0
+          ? 'var(--color-purple)'
+          : n === 1
+            ? 'var(--color-cyan)'
+            : n === 2
+              ? 'var(--color-magenta)'
+              : 'var(--color-green)'}"
+      >
         <thead>
-          <tr>
+          <tr
+            class="text-dark-blue font-champions-bold text-lg tracking-widest"
+          >
             <th></th>
-            <th colspan="2" class="font-normal">POT 1</th>
-            <th colspan="2" class="font-normal">POT 2</th>
-            <th colspan="2" class="font-normal">POT 3</th>
-            <th colspan="2" class="font-normal">POT 4</th>
+            {#each Object.entries(potstyles) as [num, style]}
+              <th colspan="2">
+                <p class="h-8 bg-white border-b-5 {style.border}">
+                  POT {num}
+                </p>
+              </th>
+            {/each}
           </tr>
-          <tr class="text-sm">
-            <th></th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-auto mr-2 mb-1 px-3 pt-0.5 bg-blue-600 rounded-xl"
-                >
-                  HOME
-                </div>
-              </div>
+          <tr>
+            <th>
+              <p
+                class="w-50 h-8 pt-px bg-white border-b-5 text-dark-blue tracking-widest {potstyles[
+                  String(n + 1)
+                ].border}"
+              >
+                POT {n + 1}
+              </p>
             </th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-2 mr-auto mb-1 px-3 pt-0.5 bg-blue-900 rounded-xl"
-                >
-                  AWAY
-                </div>
-              </div>
-            </th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-auto mr-2 mb-1 px-3 pt-0.5 bg-blue-600 rounded-xl"
-                >
-                  HOME
-                </div>
-              </div>
-            </th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-2 mr-auto mb-1 px-3 pt-0.5 bg-blue-900 rounded-xl"
-                >
-                  AWAY
-                </div>
-              </div>
-            </th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-auto mr-2 mb-1 px-3 pt-0.5 bg-blue-600 rounded-xl"
-                >
-                  HOME
-                </div>
-              </div>
-            </th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-2 mr-auto mb-1 px-3 pt-0.5 bg-blue-900 rounded-xl"
-                >
-                  AWAY
-                </div>
-              </div>
-            </th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-auto mr-2 mb-1 px-3 pt-0.5 bg-blue-600 rounded-xl"
-                >
-                  HOME
-                </div>
-              </div>
-            </th>
-            <th class="font-normal">
-              <div class="flex">
-                <div
-                  class="ml-2 mr-auto mb-1 px-3 pt-0.5 bg-blue-900 rounded-xl"
-                >
-                  AWAY
-                </div>
-              </div>
-            </th>
+            {#each Object.values(potstyles) as style}
+              {#each venues as venue}
+                <th>
+                  <p
+                    class="tracking-wide h-8 w-22 pt-0.75 {style.bg} {style.text}"
+                  >
+                    {venue}
+                  </p>
+                </th>
+              {/each}
+            {/each}
           </tr>
         </thead>
         <tbody>
           {#each pot as teamid}
             {@const team = teams.get(teamid)}
-            <tr
-              class="odd:bg-blue-950 odd:bg-opacity-35 even:bg-blue-900 even:bg-opacity-35"
-            >
-              <td class="w-48 py-2">
-                <div class="flex h-6 px-3">
-                  <div class="flex justify-center w-6">
-                    <img
-                      class="h-full"
-                      src="team/{team.id}.svg"
-                      alt={team.name}
-                    />
+            <tr>
+              <td>
+                <button
+                  class="font-champions-bold w-full h-9 py-1 transition px-3.5 flex gap-2.5 cursor-pointer bg-dark-blue/33 hover:bg-(--pot-color)/50"
+                  onclick={() => (selected = teamid)}
+                >
+                  <div class="flex items-center justify-center w-6">
+                    <img class="h-6" src="team/{teamid}.svg" alt={teamid} />
                   </div>
-                  <p class="flex items-center ml-2">{team.name}</p>
-                </div>
+                  <p class="flex items-center tracking-wide">
+                    {team.name.toUpperCase()}
+                  </p>
+                </button>
               </td>
               {#each team.matches
                 .map((matchid) => matches.get(matchid))
@@ -118,32 +86,42 @@
                     return team.id === a.home ? -1 : 1;
                   }
                   return aPot - bPot;
-                }) as match}
+                }) as match, i}
                 {@const opponent =
                   team.id === match.home
                     ? teams.get(match.away)
                     : teams.get(match.home)}
-                <td class="py-2">
-                  <div
-                    class="relative flex h-6 px-3 border-l-2 border-blue-600 border-opacity-35"
+                <td>
+                  <button
+                    class="flex relative w-full h-9 py-1 transition px-2.75 gap-1.5 cursor-pointer hover:bg-(--pot-color)/50 {i %
+                      2 ===
+                    0
+                      ? 'bg-electric-blue/25'
+                      : 'bg-dark-blue/33'}"
+                    onclick={() => (selected = opponent.id)}
                   >
-                    <div class="flex justify-center w-6">
+                    <div class="flex items-center justify-center w-6">
                       <img
-                        class="h-full"
+                        class="h-6"
                         src="team/{opponent.id}.svg"
-                        alt={opponent.name}
+                        alt={opponent.id}
                       />
                     </div>
-                    <p class="flex items-center ml-2">{opponent.id}</p>
+                    <p class="flex items-center tracking-wide">
+                      {opponent.id}
+                    </p>
                     {#if scheduled}
                       <div
-                        class="absolute bottom-0 flex items-center justify-center w-3 h-3 bg-blue-700 rounded-full left-7"
-                        style="font-size: 0.625rem; line-height: 0.875rem"
+                        class="absolute flex items-center justify-center w-3 h-3 rounded-full left-7 bottom-0.75 {match.round <=
+                        round
+                          ? 'bg-cyan text-dark-blue'
+                          : 'bg-dark-blue text-cyan'}"
+                        style="font-size: 0.605rem"
                       >
                         {match.round}
                       </div>
                     {/if}
-                  </div>
+                  </button>
                 </td>
               {/each}
             </tr>
@@ -153,3 +131,7 @@
     </div>
   {/each}
 </section>
+
+{#if selected}
+  <Team team={teams.get(selected)} onClose={() => (selected = null)} />
+{/if}

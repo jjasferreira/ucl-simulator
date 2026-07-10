@@ -1,78 +1,68 @@
 <script>
-  export let id;
-  export let league;
-  export let close;
-
-  let team = league.teams.get(id);
+  let { team, onClose } = $props();
 </script>
 
-<div
-  class="fixed inset-0 flex justify-center overflow-y-auto bg-black bg-opacity-50 rounded-none py-28"
-  on:click={(team == null, close)}
-  role="button"
-  tabindex="-2"
-  aria-label="Close"
-  on:keydown={close}
+<section
+  class="fixed inset-0 flex items-center justify-center bg-black/25 backdrop-blur-sm"
+  style="--team-color: {team.color};
+         --team-dark-color: color-mix(in srgb, {team.color}, black 15%)"
 >
-  <!-- Modal -->
-  <div
-    class="flex flex-col items-center w-5/6 p-1 rounded"
-    style="background-color: {team.color}"
-    on:click|stopPropagation
-    role="button"
-    tabindex="-1"
-    aria-label="Modal"
-    on:keydown={() => {}}
-  >
+  <div class="w-full max-w-md p-6 shadow-xl bg-(--team-dark-color) rounded-xl">
+    <div
+      class="flex flex-col items-center justify-between pb-3 border-b border-gray-200"
+    >
+      <!-- Trophies -->
+      <div class="flex h-6 mt-1 space-x-1">
+        <img class="w-6" src={`icon/trophy.svg`} alt="3" />
+        <p class="text-md">3</p>
+      </div>
+      <!-- Logo -->
+      <div class="flex justify-center w-32 h-32 p-2 bg-black bg-opacity-50">
+        <img class="h-full" src="team/{team.id}.svg" alt={team.name} />
+      </div>
+      <!-- Name -->
+      <h1 class="text-3xl font-bold">{team.name}</h1>
+      <!-- Country -->
+      <div class="flex items-center gap-1">
+        <div
+          class="flex w-5 h-5 overflow-hidden border-2 rounded-full border-silver"
+        >
+          <img
+            class="object-cover"
+            src="country/{team.country}.svg"
+            alt={team.country}
+          />
+        </div>
+        <p class="text-md">{team.country}</p>
+      </div>
+    </div>
     <!-- Top part -->
-    <div class="relative overflow-hidden">
+    <div class="">
       <!-- Close -->
       <div class="absolute top-3 left-3">
-        <button class="bg-blue-900 hover:bg-blue-800" on:click={close}>
-          <img class="w-6 h-6 my-1" src={`icon/arrow-left.svg`} alt="Close" />
+        <button
+          onclick={onClose}
+          class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+        >
+          ✕
         </button>
       </div>
       <!-- Content -->
-      <div class="absolute bottom-6 left-3">
-        <!-- Trophies -->
-        <div class="flex h-6 mt-1 space-x-1">
-          <img class="w-6" src={`icon/trophy.svg`} alt="3" />
-          <p class="text-md">3</p>
-        </div>
-        <!-- Logo -->
-        <div class="flex justify-center w-32 h-32 p-2 bg-black bg-opacity-50">
-          <img class="h-full" src="team/{id}.svg" alt={team.name} />
-        </div>
-        <!-- Name -->
-        <h1 class="text-3xl font-bold">{team.name}</h1>
-        <!-- Country -->
-        <div class="flex space-x-1">
-          <div class="w-5 h-5 mt-0.5 flex overflow-hidden rounded-full">
-            <img
-              class="object-cover"
-              src="country/{team.country}.svg"
-              alt={team.country}
-            />
-          </div>
-          <p class="text-md">{team.country}</p>
-        </div>
-      </div>
+      <div class="absolute bottom-6 left-3"></div>
       <!-- Player -->
       <img
         class="absolute translate-x-16"
-        src="player/{id}.webp"
+        src="player/{team.id}.webp"
         alt={team.name}
       />
-      <!-- Background -->
-      <img class="" src="images/stadium.jpg" alt="UEFA Champions League" />
     </div>
     <div class="mt-3">
-      <p>{team.ground}</p>
-      <p>Coefficient: {team.coefficient}</p>
-      <p>Pot: {team.pot}</p>
-      <p>Points: {team.points}</p>
+      <p><strong>Ground:</strong> {team.ground}</p>
+      <p><strong>Coefficient:</strong> {team.coefficient}</p>
+      <p><strong>Pot:</strong> {team.pot}</p>
+      <p><strong>Points:</strong> {team.points}</p>
+      <p>Matches Played: {team.matchesPlayed}</p>
       <!--
-            <p>Matches Played: {team.matchesPlayed}</p>
             <p>Wins: {team.wins}</p>
             <p>Draws: {team.draws}</p>
             <p>Losses: {team.losses}</p>
@@ -86,4 +76,4 @@
             -->
     </div>
   </div>
-</div>
+</section>
