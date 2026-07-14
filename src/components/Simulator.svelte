@@ -12,15 +12,12 @@
   import Table from "@components/Table.svelte";
   import Knockout from "@components/Knockout.svelte";
 
-  import TeamModal from "@components/Team.svelte";
-
   let league;
   let generated = false;
   let scheduled = false;
   let knockout = false;
-  let tab = "about";
+  let tab = "none";
   let tabMatchweek = 1;
-  let teamModal = null;
 
   onMount(() => {
     league = new League(teams);
@@ -45,13 +42,6 @@
     league.playMatchweek(week);
     league.round = week;
     console.log(league);
-  }
-
-  function showTeamModal(id) {
-    teamModal = id;
-    /*pushState("", {
-      showTeamModal: true,
-    });*/
   }
 
   async function generateKnockout() {
@@ -140,16 +130,4 @@
     {/if}
     <Knockout teams={league.teams} table={league.table} />
   {/if}
-
-  <!--
-  <!{#if page.state.showTeamModal}
-    <TeamModal
-      id={teamModal}
-      {league}
-      close={() => {
-        history.back();
-      }}
-    />
-  {/if}
-  -->
 </main>

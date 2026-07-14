@@ -31,7 +31,7 @@
         {#if coeff}
           <p
             transition:slide={{ axis: "x" }}
-            class="pl-2 flex justify-center pt-1.5 text-sm italic tracking-wider w-16 rounded-tl-2xl"
+            class="pl-4 flex justify-center pt-1.5 text-sm italic tracking-wider w-16 rounded-tl-2xl"
           >
             coeff
           </p>
@@ -51,7 +51,7 @@
             {#if coeff}
               <div
                 transition:slide={{ axis: "x" }}
-                class="flex items-center justify-center w-16 pl-2 text-sm"
+                class="flex items-center justify-center w-16 pl-4 pt-0.5 text-sm"
               >
                 {team.coefficient.toLocaleString("de-DE")}
               </div>

@@ -1,6 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="800">
-    <path d="M 0,0 H 1100 V 800 H 0 Z" fill="#fff"/>
-    <path d="M 0,75 H 1100 V 200 H 0 Z" fill="#0038b8"/>
-    <path d="M 0,600 H 1100 V 725 H 0 Z" fill="#0038b8"/>
-    <path d="M 423.81566,472.85253 H 676.18435 L 550.00001,254.29492 Z m 126.18435,72.85255 126.1843,-218.55765 H 423.81566 Z" fill="none" stroke="#0038b8" stroke-width="27.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-il" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="il-a">
+      <path fill-opacity=".7" d="M0 0h512v512H0z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#il-a)">
+    <path fill="#fff" d="M619.4 512H-112V0h731.4z"/>
+    <path fill="#0038b8" d="M619.4 115.2H-112V48h731.4zm0 350.5H-112v-67.2h731.4zm-483-275 110.1 191.6L359 191.6z"/>
+    <path fill="#fff" d="m225.8 317.8 20.9 35.5 21.4-35.3z"/>
+    <path fill="#0038b8" d="M136 320.6 246.2 129l112.4 190.8z"/>
+    <path fill="#fff" d="m225.8 191.6 20.9-35.5 21.4 35.4zM182 271.1l-21.7 36 41-.1-19.3-36zm-21.3-66.5 41.2.3-19.8 36.3zm151.2 67 20.9 35.5-41.7-.5zm20.5-67-41.2.3 19.8 36.3zm-114.3 0L189.7 256l28.8 50.3 52.8 1.2 32-51.5-29.6-52z"/>
+  </g>
 </svg>

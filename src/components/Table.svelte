@@ -72,7 +72,7 @@
             <td class="py-2 text-center">{team.goalsAgainst}</td>
             <td class="py-2 text-center">{team.goalsFor - team.goalsAgainst}</td
             >
-            <td class="flex items-center h-full pl-2 pr-4 space-x-1">
+            <td class="flex items-center h-full pl-2 pr-4 gap-px">
               {#each team.matches
                 .map((matchid) => matches.get(matchid))
                 .filter((m) => m.played)
@@ -84,21 +84,39 @@
                         (team.id === m.away) & (m.awayGoals > m.homeGoals)
                       ? "W"
                       : "L"}
-                <div
-                  class="rounded-full flex items-center justify-center text-dark-blue p-px
-                  {result === 'W'
-                    ? 'bg-green'
-                    : result === 'L'
-                      ? 'bg-red'
-                      : 'bg-silver'}
-                  {i === team.matchesPlayed - 1 ? 'w-3.5 h-3.5' : 'w-3 h-3'}"
-                >
-                  {#if result === "W"}
-                    {@html check}
-                  {:else if result === "L"}
-                    {@html x}
-                  {:else}
-                    {@html minus}
+                <div class="flex flex-col justify-center items-center">
+                  <div
+                    class="relative flex items-center justify-center w-3.75 h-3.75 {result ===
+                    'W'
+                      ? 'text-green'
+                      : result === 'L'
+                        ? 'text-red'
+                        : 'text-silver'}
+                      {i === team.matchesPlayed - 1
+                      ? 'w-4.5 h-4.5'
+                      : 'w-3.75 h-3.75'}"
+                  >
+                    <div
+                      class="absolute w-3/5 h-3/5 rounded-full bg-dark-blue"
+                    ></div>
+                    <span class="absolute inset-0">
+                      {#if result === "W"}
+                        {@html check}
+                      {:else if result === "L"}
+                        {@html x}
+                      {:else}
+                        {@html minus}
+                      {/if}
+                    </span>
+                  </div>
+                  {#if i === team.matchesPlayed - 1}
+                    <div
+                      class="w-3/4 h-0.5 rounded-full {result === 'W'
+                        ? 'bg-green'
+                        : result === 'L'
+                          ? 'bg-red'
+                          : 'bg-silver'}"
+                    ></div>
                   {/if}
                 </div>
               {/each}

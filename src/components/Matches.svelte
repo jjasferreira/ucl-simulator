@@ -36,18 +36,18 @@
           >
             <img class="h-full" src="team/{home.id}.svg" alt={home.name} />
           </div>
-          <div class="w-16 py-3">
+          <div class="w-16 py-1.5 my-1.5">
             <div
-              class="flex justify-center h-full border-r border-blue-600 border-opacity-35"
+              class="flex items-center justify-center h-full border-r border-blue-600 border-opacity-35"
             >
               {#if tabMatchweek <= round}
                 <h3>{match.homeGoals}</h3>
               {/if}
             </div>
           </div>
-          <div class="w-16 py-3">
+          <div class="w-16 py-1.5 my-1.5">
             <div
-              class="flex justify-center h-full border-l border-blue-600 border-opacity-35"
+              class="flex items-center justify-center h-full border-l border-blue-600 border-opacity-35"
             >
               {#if tabMatchweek <= round}
                 <h3>{match.awayGoals}</h3>

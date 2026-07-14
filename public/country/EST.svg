@@ -1,5 +1,5 @@
-<svg height="630" width="990" xmlns="http://www.w3.org/2000/svg">
-    <path d="m0 0h990v315H0z" fill="#0072ce"/>
-    <path d="m0 210h990v315H0z"/>
-    <path d="m0 420h990v210H0z" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-ee" viewBox="0 0 512 512">
+  <path fill="#1791ff" d="M0 0h512v170.7H0z"/>
+  <path fill="#000001" d="M0 170.7h512v170.6H0z"/>
+  <path fill="#fff" d="M0 341.3h512V512H0z"/>
 </svg>
