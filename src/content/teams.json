@@ -1,290 +1,72 @@
-{
-  "MCI": {
-    "name": "Man City",
-    "country": "ENG",
-    "ground": "City of Manchester Stadium",
-    "color": "#6CABDD",
-    "coefficient": 148000,
-    "pot": 1
-  },
-  "BAY": {
-    "name": "Bayern Munchen",
-    "country": "GER",
-    "ground": "Munich Football Arena",
-    "color": "#DC052D",
-    "coefficient": 144000,
-    "pot": 1
-  },
-  "RMA": {
-    "name": "Real Madrid",
-    "country": "ESP",
-    "ground": "Estadio Santiago Bernabeu",
-    "color": "#FFFFFF",
-    "coefficient": 136000,
-    "pot": 1
-  },
-  "PSG": {
-    "name": "Paris",
-    "country": "FRA",
-    "ground": "Parc des Princes",
-    "color": "#004170",
-    "coefficient": 116000,
-    "pot": 1
-  },
-  "LIV": {
-    "name": "Liverpool",
-    "country": "ENG",
-    "ground": "Anfield",
-    "color": "#C8102E",
-    "coefficient": 114000,
-    "pot": 1
-  },
-  "INT": {
-    "name": "Inter",
-    "country": "ITA",
-    "ground": "Stadio Giuseppe Meazza",
-    "color": "#010E80",
-    "coefficient": 101000,
-    "pot": 1
-  },
-  "BVB": {
-    "name": "B. Dortmund",
-    "country": "GER",
-    "ground": "BVB Stadion Dortmund",
-    "color": "#FDE100",
-    "coefficient": 97000,
-    "pot": 1
-  },
-  "RBL": {
-    "name": "Leipzig",
-    "country": "GER",
-    "ground": "RB Arena",
-    "color": "#DD013F",
-    "coefficient": 97000,
-    "pot": 1
-  },
-  "BAR": {
-    "name": "Barcelona",
-    "country": "ESP",
-    "ground": "Estadi Olimpic Lluis Companys",
-    "color": "#A50044",
-    "coefficient": 91000,
-    "pot": 1
-  },
-  "LEV": {
-    "name": "Leverkusen",
-    "country": "GER",
-    "ground": "BayArena",
-    "color": "#E32221",
-    "coefficient": 90000,
-    "pot": 2
-  },
-  "ATM": {
-    "name": "Atleti",
-    "country": "ESP",
-    "ground": "Estadio Metropolitano",
-    "color": "#CB3524",
-    "coefficient": 89000,
-    "pot": 2
-  },
-  "ATA": {
-    "name": "Atalanta",
-    "country": "ITA",
-    "ground": "Stadio di Bergamo",
-    "color": "#1E71B8",
-    "coefficient": 81000,
-    "pot": 2
-  },
-  "JUV": {
-    "name": "Juventus",
-    "country": "ITA",
-    "ground": "Juventus Stadium",
-    "color": "#000000",
-    "coefficient": 80000,
-    "pot": 2
-  },
-  "BEN": {
-    "name": "Benfica",
-    "country": "POR",
-    "ground": "Estadio do Sport Lisboa e Benfica",
-    "color": "#E83030",
-    "coefficient": 79000,
-    "pot": 2
-  },
-  "ARS": {
-    "name": "Arsenal",
-    "country": "ENG",
-    "ground": "Arsenal Stadium",
-    "color": "#EF0107",
-    "coefficient": 72000,
-    "pot": 2
-  },
-  "BRU": {
-    "name": "Club Brugge",
-    "country": "BEL",
-    "ground": "Jan Breydelstadion",
-    "color": "#0078BF",
-    "coefficient": 64000,
-    "pot": 2
-  },
-  "SHK": {
-    "name": "Shakhtar",
-    "country": "UKR",
-    "ground": "Volksparkstadion",
-    "color": "#F0612C",
-    "coefficient": 63000,
-    "pot": 2
-  },
-  "MIL": {
-    "name": "Milan",
-    "country": "ITA",
-    "ground": "San Siro",
-    "color": "#FB090B",
-    "coefficient": 59000,
-    "pot": 2
-  },
-  "FEY": {
-    "name": "Feyenoord",
-    "country": "NED",
-    "ground": "Stadion Feijenoord",
-    "color": "#FF0000",
-    "coefficient": 57000,
-    "pot": 3
-  },
-  "SPO": {
-    "name": "Sporting",
-    "country": "POR",
-    "ground": "Estadio Jose Alvalade",
-    "color": "#008057",
-    "coefficient": 54500,
-    "pot": 3
-  },
-  "PSV": {
-    "name": "PSV",
-    "country": "NED",
-    "ground": "PSV Stadion",
-    "color": "#F00000",
-    "coefficient": 54000,
-    "pot": 3
-  },
-  "DZA": {
-    "name": "GNK Dinamo",
-    "country": "CRO",
-    "ground": "Stadion Maksimir",
-    "color": "#1D3A8D",
-    "coefficient": 50000,
-    "pot": 3
-  },
-  "SAL": {
-    "name": "Salzburg",
-    "country": "AUT",
-    "ground": "Stadion Salzburg",
-    "color": "#FFFFFF",
-    "coefficient": 47000,
-    "pot": 3
-  },
-  "LIL": {
-    "name": "Lille",
-    "country": "FRA",
-    "ground": "Stade Pierre Mauroy",
-    "color": "#E01E13",
-    "coefficient": 43000,
-    "pot": 3
-  },
-  "ZVE": {
-    "name": "Crvena Zvezda",
-    "country": "SRB",
-    "ground": "Stadion Rajko Mitic",
-    "color": "#EB1926",
-    "coefficient": 40000,
-    "pot": 3
-  },
-  "YOU": {
-    "name": "Young Boys",
-    "country": "SUI",
-    "ground": "Stadion Wankdorf",
-    "color": "#F9CC11",
-    "coefficient": 37000,
-    "pot": 3
-  },
-  "CEL": {
-    "name": "Celtic",
-    "country": "SCO",
-    "ground": "Celtic Park",
-    "color": "#018749",
-    "coefficient": 32000,
-    "pot": 3
-  },
-  "SLO": {
-    "name": "Slov Bratislava",
-    "country": "SVK",
-    "ground": "Narodny Futbalovy Stadion",
-    "color": "#2CB2E7",
-    "coefficient": 27000,
-    "pot": 4
-  },
-  "MON": {
-    "name": "Monaco",
-    "country": "FRA",
-    "ground": "Stade Louis II",
-    "color": "#E51B22",
-    "coefficient": 24000,
-    "pot": 4
-  },
-  "SPA": {
-    "name": "Sparta Praha",
-    "country": "CZE",
-    "ground": "Stadion Letna",
-    "color": "#7C141C",
-    "coefficient": 23000,
-    "pot": 4
-  },
-  "AVL": {
-    "name": "Aston Villa",
-    "country": "ENG",
-    "ground": "Villa Park",
-    "color": "#670E36",
-    "coefficient": 20860,
-    "pot": 4
-  },
-  "BOL": {
-    "name": "Bologna",
-    "country": "ITA",
-    "ground": "Stadio Renato Dall'Ara",
-    "color": "#1A2F48",
-    "coefficient": 18056,
-    "pot": 4
-  },
-  "GIR": {
-    "name": "Girona",
-    "country": "ESP",
-    "ground": "Estadi Municipal de Montilivi",
-    "color": "#D72635",
-    "coefficient": 17897,
-    "pot": 4
-  },
-  "STU": {
-    "name": "Stuttgart",
-    "country": "GER",
-    "ground": "MHPArena",
-    "color": "#E32219",
-    "coefficient": 17324,
-    "pot": 4
-  },
-  "SGR": {
-    "name": "Sturm Graz",
-    "country": "AUT",
-    "ground": "Liebenauer Stadium",
-    "color": "#000000",
-    "coefficient": 14500,
-    "pot": 4
-  },
-  "BRE": {
-    "name": "Brest",
-    "country": "FRA",
-    "ground": "Stade Francis-Le Ble",
-    "color": "#ED1C24",
-    "coefficient": 13366,
-    "pot": 4
-  }
-}
+{ "RMA": { "name": "Real Madrid", "ground": "Estadio Santiago Bernabeu", "design": "plain", "country": "ESP", "primary": "#FFFFFF", "secondary": "#FEBE10", "coefficient": 143500 },
+  "MCI": { "name": "Man City", "ground": "City of Manchester Stadium", "design": "plain",   "country": "ENG", "primary": "#6CADDF", "secondary": "#FFFFFF", "coefficient": 137750 },
+  "BAY": { "name": "Bayern Munchen", "ground": "Munich Football Arena", "design": "plain",  "country": "GER", "primary": "#ED0038", "secondary": "#FFFFFF", "coefficient": 135250 },
+  "LIV": { "name": "Liverpool", "ground": "Anfield", "design": "plain",                     "country": "ENG", "primary": "#DC0714", "secondary": "#FFFFFF", "coefficient": 125500 },
+  "PSG": { "name": "Paris", "ground": "Parc des Princes", "design": "sleeves",              "country": "FRA", "primary": "#004170", "secondary": "#E30613", "coefficient": 118500 },
+  "INT": { "name": "Inter", "ground": "Stadio Giuseppe Meazza", "design": "stripes",        "country": "ITA", "primary": "#00239C", "secondary": "#000000", "coefficient": 116250 },
+  "CHE": { "name": "Chelsea", "ground": "Stamford Bridge", "design": "plain",               "country": "ENG", "primary": "#051495", "secondary": "#FFFFFF", "coefficient": 109000 },
+  "BVB": { "name": "B. Dortmund", "ground": "BVB Stadion Dortmund", "design": "sleeves",    "country": "GER", "primary": "#FFD900", "secondary": "#000000", "coefficient": 106750 },
+  "ROM": { "name": "Roma", "ground": "Stadio Olimpico", "design": "plain",                  "country": "ITA", "primary": "#8E001C", "secondary": "#FFB300", "coefficient": 104500 },
+  "BAR": { "name": "Barcelona", "ground": "Camp Nou", "design": "stripes",                  "country": "ESP", "primary": "#004D98", "secondary": "#A50044", "coefficient": 103250 },
+  "ARS": { "name": "Arsenal", "ground": "Arsenal Stadium", "design": "sleeves",             "country": "ENG", "primary": "#DB0007", "secondary": "#FFFFFF", "coefficient": 98000 },
+  "LEV": { "name": "Leverkusen", "ground": "BayArena", "design": "sleeves",                 "country": "GER", "primary": "#E22726", "secondary": "#000000", "coefficient": 95250 },
+  "ATM": { "name": "Atleti", "ground": "Estadio Metropolitano", "design": "stripes",        "country": "ESP", "primary": "#E8151E", "secondary": "#FFFFFF", "coefficient": 93500 },
+  "BEN": { "name": "Benfica", "ground": "Estadio do SL Benfica", "design": "plain",         "country": "POR", "primary": "#E30614", "secondary": "#FFFFFF", "coefficient": 87750 },
+  "ATA": { "name": "Atalanta", "ground": "Stadio di Bergamo", "design": "stripes",          "country": "ITA", "primary": "#0D68B1", "secondary": "#151515", "coefficient": 82000 },
+  "VIL": { "name": "Villarreal", "ground": "Estadio de la Ceramica", "design": "plain",     "country": "ESP", "primary": "#FFE667", "secondary": "#005187", "coefficient": 82000 },
+  "POR": { "name": "Porto", "ground": "Estadio do Dragao", "design": "stripes",             "country": "POR", "primary": "#006FB1", "secondary": "#FFFFFF", "coefficient": 79750 },
+  "JUV": { "name": "Juventus", "ground": "Juventus Stadium", "design": "stripes",           "country": "ITA", "primary": "#000000", "secondary": "#FFFFFF", "coefficient": 74250 },
+  "FRA": { "name": "Frankfurt", "ground": "Frankfurt Arena", "design": "stripes",           "country": "GER", "primary": "#E1020C", "secondary": "#000000", "coefficient": 74000 },
+  "BRU": { "name": "Club Brugge", "ground": "Jan Breydelstadion", "design": "stripes",      "country": "BEL", "primary": "#000000", "secondary": "#0078BF", "coefficient": 71750 },
+  "RAN": { "name": "Rangers", "ground": "Ibrox Stadium", "design": "plain",                 "country": "SCO", "primary": "#0032A0", "secondary": "#FF0000", "coefficient": 71250 },
+  "FEY": { "name": "Feyenoord", "ground": "Stadion Feijenoord", "design": "halfhalf",       "country": "NED", "primary": "#FF0000", "secondary": "#FFFFFF", "coefficient": 71000 },
+  "TOT": { "name": "Tottenham", "ground": "Tottenham Hotspur Stadium", "design": "plain",   "country": "ENG", "primary": "#001C58", "secondary": "#FFFFFF", "coefficient": 70250 },
+  "PSV": { "name": "PSV", "ground": "PSV Stadion", "design": "stripes",                     "country": "NED", "primary": "#ED1C24", "secondary": "#FFFFFF", "coefficient": 69250 },
+  "AJX": { "name": "Ajax", "ground": "Amsterdam ArenA", "design": "sleeves",                "country": "NED", "primary": "#C21F3D", "secondary": "#FFFFFF", "coefficient": 67250 },
+  "LIL": { "name": "Lille", "ground": "Stade Pierre-Mauroy", "design": "plain",             "country": "FRA", "primary": "#E01E13", "secondary": "#24216A", "coefficient": 66000 },
+  "NAP": { "name": "Napoli", "ground": "Stadio Diego Armando Maradona", "design": "plain",  "country": "ITA", "primary": "#01A7E1", "secondary": "#FFFFFF", "coefficient": 61000 },
+  "SPO": { "name": "Sporting", "ground": "Estadio Jose Alvalade", "design": "hoops",        "country": "POR", "primary": "#037859", "secondary": "#FFFFFF", "coefficient": 59000 },
+  "OLY": { "name": "Olympiacos", "ground": "Karaiskakis Stadium", "design": "stripes",      "country": "GRE", "primary": "#E31F26", "secondary": "#FFFFFF", "coefficient": 56500 },
+  "DZA": { "name": "GNK Dinamo", "ground": "Stadion Maksimir", "design": "plain",           "country": "CRO", "primary": "#00509F", "secondary": "#FFFFFF", "coefficient": 56000 },
+  "BET": { "name": "Real Betis", "ground": "Estadio Benito Villamarin", "design": "stripes","country": "ESP", "primary": "#008835", "secondary": "#FFFFFF", "coefficient": 52250 },
+  "SLA": { "name": "Slavia Praha", "ground": "Stadion Eden", "design": "halfhalf",          "country": "CZE", "primary": "#FFFFFF", "secondary": "#EC162C", "coefficient": 51000 },
+  "BOD": { "name": "Bodo/Glimt", "ground": "Aspmyra Stadion", "design": "plain",            "country": "NOR", "primary": "#F9DD00", "secondary": "#000000", "coefficient": 49000 },
+  "SAL": { "name": "Salzburg", "ground": "Stadion Salzburg", "design": "plain",             "country": "AUT", "primary": "#FFFFFF", "secondary": "#DD013F", "coefficient": 48000 },
+  "MAR": { "name": "Marseille", "ground": "Stade Velodrome", "design": "plain",             "country": "FRA", "primary": "#FFFFFF", "secondary": "#0D61AB", "coefficient": 48000 },
+  "AVL": { "name": "Aston Villa", "ground": "Villa Park", "design": "sleeves",              "country": "ENG", "primary": "#490125", "secondary": "#93BDE4", "coefficient": 47250 },
+  "FEN": { "name": "Fenerbahce", "ground": "Sukru Saracoglu Stadium", "design": "stripes",  "country": "TUR", "primary": "#163962", "secondary": "#FFED00", "coefficient": 47250 },
+  "BRA": { "name": "Braga", "ground": "Estadio Municipal de Braga", "design": "sleeves",    "country": "POR", "primary": "#FF040E", "secondary": "#FFFFFF", "coefficient": 46000 },
+  "CPH": { "name": "Copenhagen", "ground": "Parken Stadium", "design": "plain",             "country": "DEN", "primary": "#0F2DB9", "secondary": "#FFFFFF", "coefficient": 44875 },
+  "ZVE": { "name": "Crvena Zvezda", "ground": "Stadion Rajko Mitic", "design": "stripes",   "country": "SRB", "primary": "#FF0000", "secondary": "#FFFFFF", "coefficient": 44000 },
+  "LYO": { "name": "Lyon", "ground": "Stade de Lyon", "design": "plain",                    "country": "FRA", "primary": "#FFFFFF", "secondary": "#0F23AA", "coefficient": 43750 },
+  "PAO": { "name": "PAOK", "ground": "Toumba Stadium", "design": "stripes",                 "country": "GRE", "primary": "#000000", "secondary": "#FFFFFF", "coefficient": 42250 },
+  "MON": { "name": "Monaco", "ground": "Stade Louis II", "design": "halfhalf",              "country": "FRA", "primary": "#FF002E", "secondary": "#FFFFFF", "coefficient": 41000 },
+  "PLZ": { "name": "Viktoria Plzen", "ground": "Stadion mesta Plzne", "design": "stripes",  "country": "CZE", "primary": "#005EA6", "secondary": "#E0001A", "coefficient": 39250 },
+  "FER": { "name": "Ferencvaros", "ground": "Ferencvaros Stadion", "design": "hoops",       "country": "HUN", "primary": "#0B7340", "secondary": "#FFFFFF", "coefficient": 39000 },
+  "GAL": { "name": "Galatasaray", "ground": "Ali Sami Yen Stadyumu", "design": "halfhalf",  "country": "TUR", "primary": "#A32638", "secondary": "#FFB300", "coefficient": 38250 },
+  "CEL": { "name": "Celtic", "ground": "Celtic Park", "design": "hoops",                    "country": "SCO", "primary": "#009B48", "secondary": "#FFFFFF", "coefficient": 38000 },
+  "MTA": { "name": "M. Tel-Aviv", "ground": "Bloomfield Stadium", "design": "sleeves",      "country": "ISR", "primary": "#0A387A", "secondary": "#F2C100", "coefficient": 37500 },
+  "USG": { "name": "Union SG", "ground": "Joseph Marien Stadium", "design": "sleeves",      "country": "BEL", "primary": "#FFD905", "secondary": "#215AA1", "coefficient": 36000 },
+  "YOU": { "name": "Young Boys", "ground": "Stadion Wankdorf", "design": "hoops",           "country": "SUI", "primary": "#F9CC11", "secondary": "#000000", "coefficient": 34500 },
+  "BSL": { "name": "Basel", "ground": "St. Jakob-Park", "design": "halfhalf",               "country": "SUI", "primary": "#F00028", "secondary": "#0A0ADC", "coefficient": 33000 },
+  "MID": { "name": "Midtjylland", "ground": "Herning Stadion", "design": "stripes",         "country": "DEN", "primary": "#000000", "secondary": "#B60C28", "coefficient": 32750 },
+  "QAR": { "name": "Qarabag", "ground": "Tofiq Ismayilov Stadium", "design": "plain",       "country": "AZE", "primary": "#1E0E59", "secondary": "#FFAA2E", "coefficient": 32000 },
+  "SCF": { "name": "Freiburg", "ground": "Stadion am Wolfswinke", "design": "stripes",      "country": "GER", "primary": "#E40521", "secondary": "#FFFFFF", "coefficient": 28000 },
+  "ATH": { "name": "Athletic Club", "ground": "San Mames Stadium", "design": "stripes",     "country": "ESP", "primary": "#EE2523", "secondary":"#FFFFFF", "coefficient": 26750 },
+  "LUD": { "name": "Ludogorets", "ground": "Ludogorets Arena", "design": "plain",           "country": "BUL", "primary": "#006330", "secondary": "#FFFFFF", "coefficient": 24000 },
+  "NEW": { "name": "Newcastle", "ground": "St. James' Park", "design": "stripes",           "country": "ENG", "primary": "#000000", "secondary": "#FFFFFF", "coefficient": 23039 },
+  "NFO": { "name": "Nott'm Forest", "ground": "City Ground", "design": "plain",             "country": "ENG", "primary": "#DD0000", "secondary": "#FFFFFF", "coefficient": 23039 },
+  "SGR": { "name": "Sturm Graz", "ground": "Stadion Graz-Liebenau", "design": "sleeves",    "country": "AUT", "primary": "#000000", "secondary": "#FFFFFF", "coefficient": 23000 },
+  "FCS": { "name": "FCSB", "ground": "Arena Nationala", "design": "stripes",                "country": "ROU", "primary": "#132E52", "secondary": "#DA2928", "coefficient": 22500 },
+  "NIC": { "name": "Nice", "ground": "Stade de Nice", "design": "stripes",                  "country": "FRA", "primary": "#E60000", "secondary": "#000000", "coefficient": 20000 },
+  "BOL": { "name": "Bologna", "ground": "Stadio Renato Dall'Ara", "design": "stripes",      "country": "ITA", "primary": "#1B2838", "secondary": "#9F1F33", "coefficient": 19446 },
+  "CLT": { "name": "Celta", "ground": "Estadio de Balaidos", "design": "plain",             "country": "ESP", "primary": "#6CACE4", "secondary": "#D50032", "coefficient": 18890 },
+  "STU": { "name": "Stuttgart", "ground": "Stuttgart Arena", "design": "plain",             "country": "GER", "primary": "#FFFFFF", "secondary": "#D40723", "coefficient": 17266 },
+  "PAN": { "name": "Panathinaikos", "ground": "Athens Olympic Stadium", "design": "sleeves","country": "GRE", "primary": "#00793F", "secondary": "#FFFFFF", "coefficient": 16000 },
+  "MAL": { "name": "Malmo", "ground": "Malmo New Stadium", "design": "plain",               "country": "SWE", "primary": "#0089C5", "secondary": "#FFFFFF", "coefficient": 14500 },
+  "GAE": { "name": "Go Ahead Eagles", "ground": "De Adelaarshorst", "design": "sleeves",    "country": "NED", "primary": "#FFD600", "secondary":"#C10230", "coefficient": 13430 },
+  "UTR": { "name": "Utrecht", "ground": "Stadion Galgenwaard", "design": "halfhalf",        "country": "NED", "primary": "#ED1A2F", "secondary": "#FFFFFF", "coefficient": 13430 },
+  "PAF": { "name": "Pafos", "ground": "Limassol Stadium", "design": "halfhalf",             "country": "CYP", "primary": "#13BFF1", "secondary": "#FFFFFF", "coefficient": 11125 },
+  "GEN": { "name": "Genk", "ground": "KRC Genk Arena", "design": "halfhalf",                "country": "BEL", "primary": "#007FC4", "secondary": "#003CC3", "coefficient": 11370 },
+  "BRN": { "name": "Brann", "ground": "Brann Stadion", "design": "plain",                   "country": "NOR", "primary": "#BA0915", "secondary": "#FFFFFF", "coefficient": 7937 },
+  "KAI": { "name": "Kairat Almaty", "ground": "Almaty Central Stadium", "design": "stripes","country": "KAZ", "primary": "#F1CB2F", "secondary": "#000000", "coefficient": 5500 } }

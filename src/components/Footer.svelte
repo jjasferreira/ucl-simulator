@@ -8,7 +8,7 @@
     />
     by
     <a
-      class="text-blue-200 font-champions-bold"
+      class="text-blue-200 font-bold"
       href="https://github.com/jjasferreira"
       target="_blank"
       rel="noopener noreferrer"

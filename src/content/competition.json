@@ -1,0 +1,8 @@
+{ "ucl": ["RMA", "MCI", "BAY", "LIV", "PSG", "INT", "CHE", "BVB", "BAR",
+          "ARS", "LEV", "ATM", "BEN", "ATA", "VIL", "JUV", "FRA", "BRU",
+          "TOT", "PSV", "AJX", "NAP", "SPO", "OLY", "SLA", "BOD", "MAR",
+          "CPH", "MON", "GAL", "USG", "QAR", "ATH", "NEW", "PAF", "KAI"],
+  "uel": ["ROM", "POR", "RAN", "FEY", "LIL", "DZA", "BET", "SAL", "AVL",
+          "FEN", "BRA", "ZVE", "LYO", "PAO", "PLZ", "FER", "CEL", "MTA",
+          "YOU", "BSL", "MID", "SCF", "LUD", "NFO", "SGR", "FCS", "NIC",
+          "BOL", "CLT", "STU", "PAN", "MAL", "GAE", "UTR", "GEN", "BRN"] }

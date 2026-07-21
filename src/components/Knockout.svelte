@@ -71,17 +71,17 @@
               >
                 <div class="flex h-8">
                   <div
-                    class="flex items-center justify-center w-8 text-xl bg-blue-900 font-champions-bold"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-900 font-bold"
                   >
                     {kopo[i][0][0]}
                   </div>
                   <div
-                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-champions-light text-opacity-35"
+                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-manrope-regular text-opacity-35"
                   >
                     /
                   </div>
                   <div
-                    class="flex items-center justify-center w-8 text-xl bg-blue-900 font-champions-bold"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-900 font-bold"
                   >
                     {kopo[i][0][1]}
                   </div>
@@ -108,17 +108,17 @@
               >
                 <div class="flex h-8">
                   <div
-                    class="flex items-center justify-center w-8 text-xl bg-blue-800 font-champions-bold"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-800 font-bold"
                   >
                     {kopo[i][1][0]}
                   </div>
                   <div
-                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-champions-light text-opacity-35"
+                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-manrope-regular text-opacity-35"
                   >
                     /
                   </div>
                   <div
-                    class="flex items-center justify-center w-8 text-xl bg-blue-800 font-champions-bold"
+                    class="flex items-center justify-center w-8 text-xl bg-blue-800 font-bold"
                   >
                     {kopo[i][1][1]}
                   </div>
@@ -176,17 +176,17 @@
               >
                 <div class="flex h-8">
                   <div
-                    class="flex items-center justify-center w-8 text-xl text-blue-900 font-champions-bold bg-cyan-400"
+                    class="flex items-center justify-center w-8 text-xl text-blue-900 font-bold bg-cyan-400"
                   >
                     {ro16[i][1][0]}
                   </div>
                   <div
-                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-champions-light text-opacity-35"
+                    class="flex items-center justify-center w-4 text-3xl text-blue-600 font-manrope-regular text-opacity-35"
                   >
                     /
                   </div>
                   <div
-                    class="flex items-center justify-center w-8 text-xl text-blue-900 font-champions-bold bg-cyan-400"
+                    class="flex items-center justify-center w-8 text-xl text-blue-900 font-bold bg-cyan-400"
                   >
                     {ro16[i][1][1]}
                   </div>

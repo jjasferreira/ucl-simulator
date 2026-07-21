@@ -1,16 +1,16 @@
 <script>
-  import check from "@lib/icon/check.svg?raw";
-  import minus from "@lib/icon/minus.svg?raw";
-  import x from "@lib/icon/x.svg?raw";
+  import check from "@assets/icons/check.svg?raw";
+  import minus from "@assets/icons/minus.svg?raw";
+  import x from "@assets/icons/x.svg?raw";
 
   let { table, teams, matches } = $props();
 </script>
 
 <section class="flex w-full py-1 overflow-x-auto sm:w-auto">
   <!-- Fixed Column -->
-  <table class="shadow-[4px_0_8px_rgba(0,0,0,0.1)]">
+  <table>
     <thead>
-      <tr class="text-sm text-opacity-50 font-champions-light text-blue-50">
+      <tr class="text-sm uel:text-[13px] uel:text-black">
         <th class="pb-1 px-3 min-w-48.75 text-start">Club</th>
       </tr>
     </thead>
@@ -18,13 +18,14 @@
       {#each table as teamid, i}
         {@const team = teams.get(teamid)}
         <tr
-          class="odd:bg-blue-950 odd:bg-opacity-35 even:bg-blue-900 even:bg-opacity-35 cursor-pointer hover:bg-blue-800 transition-colors
-							border-l-[4.5px] {i < 8
-            ? 'border-cyan'
+          class="cursor-pointer transition-colors
+               odd:bg-ucl-navy/33 even:bg-ucl-blue/33 hover:bg-ucl-blue
+               uel:odd:bg-black/90 uel:even:bg-neutral-900/90 uel:hover:bg-uel-orange
+							border-l-5 {i < 8
+            ? 'border-ucl-cyan'
             : i < 24
-              ? 'border-yellow'
-              : 'border-red'}"
-          onclick={() => showTeamModal(team.id)}
+              ? 'border-ucl-yellow'
+              : 'border-ucl-red'}"
         >
           <td class="py-2">
             <div class="flex h-6 px-3">
@@ -45,12 +46,12 @@
   <div class="overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden">
     <table class="h-full min-w-full">
       <thead>
-        <tr class="text-sm text-opacity-50 font-champions-light text-blue-50">
+        <tr class="text-sm uel:text-[13px] uel:text-black">
           <th class="pb-1 pl-2 text-center min-w-10">MP</th>
           <th class="pb-1 text-center min-w-8">W</th>
           <th class="pb-1 text-center min-w-8">D</th>
           <th class="pb-1 text-center min-w-8">L</th>
-          <th class="pb-1 text-center min-w-8 font-champions-regular">Pts</th>
+          <th class="pb-1 font-extrabold text-center min-w-8">Pts</th>
           <th class="pb-1 text-center min-w-8">GF</th>
           <th class="pb-1 text-center min-w-8">GA</th>
           <th class="pb-1 text-center min-w-8">GD</th>
@@ -61,18 +62,18 @@
         {#each table as teamid}
           {@const team = teams.get(teamid)}
           <tr
-            class="h-full transition-colors cursor-pointer odd:bg-blue-950 odd:bg-opacity-35 even:bg-blue-900 even:bg-opacity-35 hover:bg-blue-800"
+            class="h-10 transition-colors cursor-pointer odd:bg-ucl-navy/33 even:bg-ucl-blue/33 hover:bg-ucl-blue uel:odd:bg-black/90 uel:even:bg-neutral-900/90 uel:hover:bg-uel-orange"
           >
             <td class="py-2 pl-2 text-center">{team.matchesPlayed}</td>
             <td class="py-2 text-center">{team.wins}</td>
             <td class="py-2 text-center">{team.draws}</td>
             <td class="py-2 text-center">{team.losses}</td>
-            <td class="py-2 text-center font-champions-bold">{team.points}</td>
+            <td class="py-2 font-bold text-center">{team.points}</td>
             <td class="py-2 text-center">{team.goalsFor}</td>
             <td class="py-2 text-center">{team.goalsAgainst}</td>
             <td class="py-2 text-center">{team.goalsFor - team.goalsAgainst}</td
             >
-            <td class="flex items-center h-full pl-2 pr-4 gap-px">
+            <td class="flex items-center h-full gap-px pl-2 pr-4">
               {#each team.matches
                 .map((matchid) => matches.get(matchid))
                 .filter((m) => m.played)
@@ -84,20 +85,20 @@
                         (team.id === m.away) & (m.awayGoals > m.homeGoals)
                       ? "W"
                       : "L"}
-                <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-col items-center justify-center">
                   <div
                     class="relative flex items-center justify-center w-3.75 h-3.75 {result ===
                     'W'
-                      ? 'text-green'
+                      ? 'text-ucl-green'
                       : result === 'L'
-                        ? 'text-red'
-                        : 'text-silver'}
+                        ? 'text-ucl-red'
+                        : 'text-ucl-silver'}
                       {i === team.matchesPlayed - 1
                       ? 'w-4.5 h-4.5'
                       : 'w-3.75 h-3.75'}"
                   >
                     <div
-                      class="absolute w-3/5 h-3/5 rounded-full bg-dark-blue"
+                      class="absolute w-3/5 rounded-full h-3/5 bg-ucl-navy"
                     ></div>
                     <span class="absolute inset-0">
                       {#if result === "W"}
@@ -112,10 +113,10 @@
                   {#if i === team.matchesPlayed - 1}
                     <div
                       class="w-3/4 h-0.5 rounded-full {result === 'W'
-                        ? 'bg-green'
+                        ? 'bg-ucl-green'
                         : result === 'L'
-                          ? 'bg-red'
-                          : 'bg-silver'}"
+                          ? 'bg-ucl-red'
+                          : 'bg-ucl-silver'}"
                     ></div>
                   {/if}
                 </div>

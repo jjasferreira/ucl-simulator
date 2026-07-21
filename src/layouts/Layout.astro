@@ -8,11 +8,9 @@ import '@styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>UCL Simulator</title>
+		<title>UEFA Club Competitions Simulator</title>
 	</head>
-	<body class="w-screen bg-dark-blue font-champions-regular text-white">
-		<main class="bg-linear-to-tr from-dark-blue to-electric-blue/75 mx-auto overflow-y-hidden flex flex-col min-h-screen">
-			<slot />
-		</main>
+	<body class="text-white bg-black">
+		<slot />
 	</body>
 </html>
