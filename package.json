@@ -1,5 +1,5 @@
 {
-  "name": "ucl-simulator",
+  "name": "uefa-cc-sim",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"
